@@ -1,0 +1,66 @@
+:root {
+    --time: 99999s;
+}
+
+.asterisk {
+    width: 25vh;
+    height: 25vh;
+    position: absolute;
+    top: 37.5vh;
+    left: calc(50vw - 12.5vh);
+    animation: spin 6s infinite linear;
+    animation-play-state: paused;
+}
+
+.asterisk:hover {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bubble {
+    height: 25vh;
+    width: 25vh;
+    /*background-color: #e3f6f5;*/
+    background-color: #bae8e8;
+    border-radius: 50%;
+    display: block;
+    transition: 1s;
+}
+
+.bubble:hover {
+    border-radius: 0%;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#aboutme {
+    position: absolute;
+    top: 9.375vh;
+    left: calc(50vw - 12.5vh);
+}
+
+#portfolio {
+    position: absolute;
+    top: 37.5vh;
+    right: calc(50vw - 40.625vh);
+}
+
+#contact {
+    position: absolute;
+    bottom: 9.375vh;
+    left: calc(50vw - 12.5vh);
+}
+
+#experiences {
+    position: absolute;
+    top: 37.5vh;
+    left: calc(50vw - 40.625vh);
+}
