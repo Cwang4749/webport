@@ -1,0 +1,104 @@
+/* Create the asterisk, the animation, and its interaction*/
+.asterisk {
+    width: 25vh;
+    height: 25vh;
+    position: absolute;
+    top: 37.5vh;
+    left: calc(50vw - 12.5vh);
+    transition: 0.2s;
+    animation: spin 6s infinite linear;
+    animation-play-state: paused;
+}
+
+.asterisk:hover {
+    animation-play-state: running;
+    cursor: pointer;
+}
+
+.asterisk:active {
+    width: 20vh;
+    height: 20vh;
+    top: 40vh;
+    left: calc(50vw - 10vh);
+    transition: .2s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Define a bubble and its interactions: */
+.bubble {
+    height: 25vh;
+    width: 25vh;
+    /*background-color: #e3f6f5;*/
+    background-color: #bae8e8;
+    color: black;
+    border-radius: 50%;
+    display: block;
+    transition: .75s;
+}
+
+.bubble:hover {
+    border-radius: 0%;
+    transition: 1s;
+    cursor: pointer;
+}
+
+/* Positions of the bubbles: */
+#aboutme {
+    position: absolute;
+    top: 9.375vh;
+    left: calc(50vw - 12.5vh);
+}
+
+#portfolio {
+    position: absolute;
+    top: 37.5vh;
+    left: calc(50vw + 15.625vh);
+}
+
+#contact {
+    position: absolute;
+    bottom: 9.375vh;
+    left: calc(50vw - 12.5vh);
+}
+
+#experience {
+    position: absolute;
+    top: 37.5vh;
+    left: calc(50vw - 40.625vh);
+}
+
+/* Modify the text and its interactions: */
+.bubble_heading {
+    position: relative;
+    font-family: "Monaco", "Arial";
+    font-size: 3.75vh;
+    transition: 0.75s;
+    top: 30%;
+}
+
+.bubble_text {
+    position: relative;
+    font-family: "Monaco", "Arial";
+    font-size: 2vh;
+    transition: 0.75s;
+    opacity: 0;
+}
+
+.bubble:hover .bubble_heading {
+    top: 10%;
+}
+
+.bubble:hover .bubble_text {
+    opacity: 1;
+    transition: 1.5s;
+}
