@@ -1,0 +1,36 @@
+/* Style of the container of the buttons*/
+.Navbar {
+    width: clamp(70px, 7vw, 200px);
+    height: clamp(210px, 21vw, 600px);
+    background-color: #D3D3D3;
+    position: absolute;
+    right: 0;
+    top: 25vh;
+    border-radius: 30px 0px 0px 30px ;
+}
+
+/* Style all the buttons */
+.button {
+    width: 50%;
+    position: relative;
+    display: block;
+    top: 10%;
+    padding-bottom: 15%;
+    left: 25%;
+}
+
+/* When a button is hovered, expand and reposition*/
+.button:hover {
+    width: 58%;
+    top: 6%;
+    left: 21%;
+    padding-bottom: 7%;
+}
+
+/* When a button is pressed, shrink and reposition*/
+.button:active {
+    width: 42%;
+    top: 10%;
+    left: 29%;
+    padding-bottom: 22.5%;
+}
