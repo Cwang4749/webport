@@ -1,0 +1,40 @@
+/* Create popup window with dark transparent edges */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.516);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: zoom-out;
+}
+
+/* Popup is centered, double spaced and indented*/
+.popupinner {
+    border-radius: 10px;
+    line-height: 200%;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: rgb(226, 210, 171);
+    font-family: "Monaco", "Arial";
+    font-size: clamp(15px, 3vh, 100px);
+    overflow: scroll;
+
+    display: flex;
+    justify-content: safe center;
+    align-items: safe center;
+    /* text-indent: 7%; */
+    /* text-wrap: balance; */
+}
+
+#popuptext {
+    text-indent: 7%;
+}

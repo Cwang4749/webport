@@ -1,0 +1,62 @@
+.tableheader {
+    position: relative;
+    display: block;
+    left: 2.5vw;
+    width: fit-content;
+    margin-bottom: 2vh;
+    font-size: clamp(15px, 4vh, 100px);
+    font-weight: 900;
+    color: #4682B4;
+    top: 3vh;
+    font-family: "Monaco", "Arial";
+}
+
+/* Size and center the table */
+.table1 {
+    position: relative;
+    top: 3vh;
+    cursor: zoom-in;
+    width: 95vw;
+    min-width: 1000px;
+    margin-bottom: 4vh;
+
+    /* center the table */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*All cells have same background color and border. When hovered, change bg color*/
+.table1 td {
+    border-left: solid 1px white;
+    background-color: rgba(232, 232, 232, 0.56);
+    border-radius: 10px;
+    margin-bottom: 10vh;
+    font-family: "Monaco", "Arial";
+    font-size: clamp(15px, 2vh, 100px);
+    padding: 2%;
+}
+
+.table1 td:hover {
+    background-color: rgba(237, 210, 143, 0.56);
+}
+
+/*Style each column*/
+.table1 td:first-child {
+    border-left: none;
+    width: 14.29vw;
+    min-width: 143px;
+    text-align: center;
+    font-weight: 900;
+}
+.table1 td:nth-child(2) {
+    width: 14.29vw;
+    min-width: 143px;
+    text-align: center;
+    font-weight: 900;
+}
+.table1 td:nth-child(3) {
+    width: 71.42vw;
+    min-width: 714px;
+    text-align: left;
+    text-indent: 7%;
+}

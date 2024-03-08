@@ -12,20 +12,20 @@ function Navbar(props) {
     const linkArray = [
         {
             image: searchicon,
-            link: "/AboutMe",
+            link: "/AboutMe"
         },
         {
             image: foldericon,
-            link: "/Portfolio",
+            link: "/Portfolio"
         },
         {
             image: mailicon,
-            link: "/Contact",
+            link: "/Contact"
         },
         {
             image: capicon,
-            link: "/Experience",
-        },
+            link: "/Experience"
+        }
     ];
 
     return(
