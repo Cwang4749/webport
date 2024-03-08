@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useState } from "react";
+import Popup from "./Popup";
 import "./styles/Experience.css"
 
 function Experience() {
@@ -38,40 +40,48 @@ function Experience() {
         }
     ];
 
+    const [zoom, set_zoom] = useState(false);
+    const [zoom_text, set_text] = useState("");
+    const [indent, set_indent] = useState(false);
+
     return(
-        <div className="App">
-            <div className="tableheader" id="firstheader">EXPERIENCE</div>
-            <Navbar second_btn={0} third_btn={1} fourth_btn={2} />
-            <table className="table1">
-                {
-                    work.map((val, key) => {
-                        return(
-                            <tr key={key}>
-                                <td>{val.year}</td>
-                                <td>{val.place}</td>
-                                <td>{val.description.map((str,index) => {return(<p>{str} <br/></p> )})}</td>
-                            </tr>
-                        )
-                    })
-                }
-            </table>
+        <div>
+            <div>
+                <div className="tableheader" id="firstheader">EXPERIENCE</div>
+                <Navbar second_btn={0} third_btn={1} fourth_btn={2} />
+                <table className="table1">
+                    <tbody>{
+                        work.map((val, key) => {
+                            return(
+                                <tr key={key}>
+                                    <td onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>{val.year}</td>
+                                    <td onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>{val.place}</td>
+                                    <td onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>{val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</td>
+                                </tr>
+                            )
+                        })
+                    }</tbody>
+                </table>
 
-            <div className="tableheader">EDUCATION</div>
-            <table className="table1">
-                {
-                    education.map((val, key) => {
-                        return(
-                            <tr key={key}>
-                                <td>{val.year}</td>
-                                <td>{val.place}</td>
-                                <td>{val.description.map((str,index) => {return(<p>{str} <br/></p> )})}</td>
-                            </tr>
-                        )
-                    })
-                }
-            </table>
+                <div className="tableheader">EDUCATION</div>
+                <table className="table1">
+                    <tbody>{
+                        education.map((val, key) => {
+                            return(
+                                <tr key={key}>
+                                    <td onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>{val.year}</td>
+                                    <td onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>{val.place}</td>
+                                    <td onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>{val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</td>
+                                </tr>
+                            )
+                        })    
+                    }</tbody>
+                </table>
 
-            <div className="tableheader">SKILLS</div>
+                <div className="tableheader">SKILLS</div>
+            </div>
+
+            <Popup zoom={zoom} setZoom={set_zoom} zoomText={zoom_text} indent={indent}></Popup>
         </div>
     );
 }
