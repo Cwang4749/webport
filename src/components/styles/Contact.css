@@ -1,0 +1,103 @@
+/* Basic styling for the page, includes centering of the card*/
+.contactpage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    min-width: 1000px;
+    min-height: 500px;
+    height: 100vh;
+    padding: 10px;
+
+    display: flex;
+    justify-content: safe center;
+    align-items: safe center;
+    overflow: scroll;
+}
+
+/* Basica styling of the business card, responsive width + height to a degree*/
+.card {
+    display: block;
+    position: absolute;
+    background-color: rgb(202, 202, 202);
+    width: clamp(1000px, 90vw, 160vh);
+    height: clamp(500px, 50vw, 80vh);
+}
+#bgarch {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Container for the logo and the link has vertical center, left alignment, and limited responsiveness of font */
+.cardlink {
+    width: 60%;
+    height: 12.5%;
+
+    background-color: #d1ece7;
+    border-radius: 20px;
+    
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+
+    color: #e74444;
+    font-family: "Monaco", "Arial";
+    font-weight: 600;
+    font-size: clamp(1rem, calc(1vw + 1vh), 2.5rem);
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    opacity: 0.75;
+    transition: 0.5s;
+}
+.cardlink:hover {
+    transition: 0.5s;
+    opacity: 1;
+    background-color: rgb(216, 220, 188);
+    cursor: pointer;
+}
+a {
+    all: unset;
+}
+
+/* All of the logos will be the same width and have the same margins*/
+.logo {
+    width: 6%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+/* Position each of the different links*/
+#linkedinpos {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+#githubpos {
+    position: absolute;
+    left: 25%;
+    top: 32.5%;
+}
+#gmailpos {
+    position: absolute;
+    left: 30%;
+    top: 55%;
+}
+#outlookpos {
+    position: absolute;
+    left: 35%;
+    top: 77.5%;
+}
+
+#cardprofile {
+    border-radius: 50%;
+    width: 20%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    object-fit: fill;
+}
