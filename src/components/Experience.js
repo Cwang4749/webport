@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "./Navbar";
-import { useState } from "react";
 import Popup from "./Popup";
 import "./styles/Experience.css"
 
@@ -81,7 +80,7 @@ function Experience() {
                 <div className="tableheader">SKILLS</div>
             </div>
 
-            <Popup zoom={zoom} setZoom={set_zoom} zoomText={zoom_text} indent={indent}></Popup>
+            <Popup zoom={zoom} setZoom={set_zoom} zoomText={zoom_text} indent={indent}/>
         </div>
     );
 }

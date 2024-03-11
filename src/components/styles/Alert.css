@@ -1,0 +1,32 @@
+/* Alert is in bottom right of screen*/
+.alert {
+    width:fit-content;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(237, 172, 172);
+    border-radius: 10px;
+    padding: 10px;
+
+    color: rgb(47, 62, 176);
+    font-family: "Monaco", "Arial";
+    font-size: clamp(1rem, calc(1vw + 1vh), 2.5rem);
+
+    /* Normally invisible, only aniimates when copying*/
+    animation: alertfade 1s 1 ease-in;
+    opacity: 0;
+}
+
+/* Animate the alert from visible to transparent*/
+@keyframes alertfade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.blank {
+    opacity: 0;
+}

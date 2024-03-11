@@ -30,6 +30,7 @@
     top: 6%;
     left: 21%;
     padding-bottom: 7%;
+    cursor: pointer;
 }
 
 /* When a button is pressed, shrink and reposition*/
