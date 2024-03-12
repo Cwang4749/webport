@@ -21,7 +21,8 @@
     position: absolute;
     background-color: rgb(202, 202, 202);
     width: clamp(1000px, 90vw, 160vh);
-    height: clamp(500px, 50vw, 80vh);
+    aspect-ratio: 15/8;
+    /* height: clamp(500px, 50vw, 80vh); */
 }
 #bgarch {
     width: 100%;
@@ -45,7 +46,7 @@
     color: #e74444;
     font-family: "Monaco", "Arial";
     font-weight: 600;
-    font-size: clamp(1rem, calc(1vw + 1vh), 2.5rem);
+    font-size: clamp(1rem, calc(0.8vw + 1vh), 2.5rem);
     text-wrap: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

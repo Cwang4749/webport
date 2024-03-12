@@ -1,0 +1,55 @@
+.aboutmepage {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(166, 164, 147);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilepic {
+    width: 20%;
+    min-width: 150px;
+    aspect-ratio: 3/4;
+    border-radius: 30px;
+    position: fixed;
+    left: 10%;
+    object-fit: cover;
+}
+
+.am_circlecontainer {
+    width: 3%;
+    aspect-ratio: 1/5;
+    position: fixed;
+    left: 82%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.am_circle {
+    width: 100%;
+    aspect-ratio: 1;
+    transition: 0.2s;
+    border-radius: 50%;
+    background-color: rgb(163, 221, 210);
+    opacity: 0.5;
+}
+
+.am_circle:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: rgb(146, 226, 211);
+    opacity: 0.75;
+}
+
+
+.am_curr_circle {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgb(79, 226, 199);
+    cursor: pointer;
+    opacity: 0.75;
+}
