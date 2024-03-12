@@ -34,7 +34,7 @@ function Contact() {
                 <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer"><div className="cardlink" id="githubpos"><img className="logo" src={githublogo}/>https://github.com/Cwang4749</div></a>
                 <div className="cardlink" id="gmailpos" onClick={() => CopyText("calvinwang1002@gmail.com")}><img className="logo" src={gmaillogo}/>calvinwang1002@gmail.com</div>
                 <div className="cardlink" id="outlookpos" onClick={() => CopyText("calvin.wang161@myhunter.cuny.edu")}><img className="logo" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu</div>
-                <img id="cardprofile" src={cardprofile}/>
+                <img loading="lazy" id="cardprofile" src={cardprofile}/>
             </div>
             <Navbar second_btn={0} third_btn={1} fourth_btn={3} />
 

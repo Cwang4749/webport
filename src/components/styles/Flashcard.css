@@ -14,7 +14,11 @@
     overflow: scroll;
 
     transform-style: preserve-3d;
-    transition: .1s;
+    transition: .08s;
+}
+
+.flashcard:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .flashcardtext {
@@ -31,7 +35,7 @@
 
     font-family: "Monaco", "Arial";
     font-size: clamp(15px, 2vh, 100px);
-    transition: 0.2s;
+    transition: 0.08s;
 }
 
 .flashcardimg {

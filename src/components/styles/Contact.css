@@ -59,6 +59,7 @@
     opacity: 1;
     background-color: rgb(216, 220, 188);
     cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 a {
     all: unset;
