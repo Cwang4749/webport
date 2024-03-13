@@ -29,7 +29,7 @@ function Contact() {
         <div className="contactpage">
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
             <div className="card">
-                <img id="bgarch" src={cardbackground}/>
+                <img id="contactcardbg" src={cardbackground}/>
                 <a href="https://linkedin.com/in/calvin-wang-b107a71b9" target="_blank" rel="noreferrer"><div className="cardlink" id="linkedinpos"><img className="logo" src={linkedinlogo}/>https://linkedin.com/in/calvin-wang-b107a71b9</div></a>
                 <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer"><div className="cardlink" id="githubpos"><img className="logo" src={githublogo}/>https://github.com/Cwang4749</div></a>
                 <div className="cardlink" id="gmailpos" onClick={() => CopyText("calvinwang1002@gmail.com")}><img className="logo" src={gmaillogo}/>calvinwang1002@gmail.com</div>

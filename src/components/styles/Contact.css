@@ -23,8 +23,14 @@
     width: clamp(1000px, 90vw, 160vh);
     aspect-ratio: 15/8;
     /* height: clamp(500px, 50vw, 80vh); */
+    box-shadow: 0 0 30px 5px rgba(66, 120, 197, 0.3);
 }
-#bgarch {
+
+.card:hover {
+    box-shadow: 0 0 30px 10px rgba(66, 120, 197, 0.3);
+}
+
+#contactcardbg {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -45,6 +51,7 @@
 
     color: #e74444;
     font-family: "Monaco", "Arial";
+    font-style: italic;
     font-weight: 600;
     font-size: clamp(1rem, calc(0.8vw + 1vh), 2.5rem);
     text-wrap: nowrap;
@@ -59,7 +66,7 @@
     opacity: 1;
     background-color: rgb(216, 220, 188);
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 a {
     all: unset;
@@ -102,4 +109,8 @@ a {
     left: 5%;
     bottom: 5%;
     object-fit: fill;
+}
+
+#cardprofile:hover {
+    box-shadow: 0 0 30px 5px rgba(66, 197, 156, 0.3);
 }

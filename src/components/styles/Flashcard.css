@@ -14,11 +14,11 @@
     overflow: scroll;
 
     transform-style: preserve-3d;
-    transition: .08s;
+    transition: .05s;
 }
 
 .flashcard:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 .flashcardtext {
@@ -34,8 +34,9 @@
     text-indent: 7%;
 
     font-family: "Monaco", "Arial";
-    font-size: clamp(15px, 2vh, 100px);
-    transition: 0.08s;
+    font-size: clamp(15px, 2.2vh, 100px);
+    font-style: italic;
+    transition: 0.05s;
 }
 
 .flashcardimg {
@@ -46,13 +47,4 @@
     position: absolute;
     top: 0;
     left: 0;
-}
-
-@keyframes flipcard {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(180deg);
-    }
 }

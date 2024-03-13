@@ -15,6 +15,11 @@
     position: fixed;
     left: 10%;
     object-fit: cover;
+    box-shadow: 0 0 30px 5px rgba(30, 48, 107, 0.3);
+}
+
+.profilepic:hover {
+    box-shadow: 0 0 30px 10px rgba(30, 48, 107, 0.3);
 }
 
 .am_circlecontainer {
@@ -42,7 +47,7 @@
     transition: 0.2s;
     background-color: rgb(146, 226, 211);
     opacity: 0.75;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -56,5 +61,5 @@
 }
 
 .am_curr_circle:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
