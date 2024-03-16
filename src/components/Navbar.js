@@ -35,7 +35,7 @@ function Navbar(props) {
                 <img className="button" src={homeicon}/>
             </Link>
 
-            {/* Using the parameters passed by page before, render the correct buttons by referencing the array */}
+            {/* Using the parameters passed by page the user is currently on, render the correct buttons by referencing the array */}
             <Link to={linkArray[props.second_btn].link}>
                 <img className="button" src={linkArray[props.second_btn].image}/>
             </Link>
