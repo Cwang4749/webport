@@ -1,0 +1,24 @@
+.projdetails {
+    width: 95vw;
+    background-color: rgb(126, 126, 126);
+    position: absolute;
+    left: 2.5vw;
+    padding: 20px 0px 10px 0px;
+    border-radius: 25px;
+    font-family: "Monaco", "Arial";
+}
+
+.projectheader {
+    padding: 50px;
+    font-size: 2rem;
+    background-color: rgb(146, 181, 145);
+}
+
+.projecttext {
+    font-size: 1.5rem;
+    padding: 25px;
+}
+
+.projectimages {
+    width: 50%;
+}
