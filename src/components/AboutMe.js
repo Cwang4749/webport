@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import Navbar from "./Navbar";
 import Flashcard from "./Flashcard";
-import profile from "../images/profile.jpg";
-import redenvelope from '../images/redenvelope.jpg';
-import scenery1 from '../images/scenery.gif';
-import scenery2 from '../images/scenery2.jpg';
-import scenery3 from '../images/scenery3.gif';
-import blackbelt from '../images/blackbelt.jpg';
-import knitting from '../images/funfact.jpg';
+import profile from "../images/aboutme/profile.jpg";
+import redenvelope from '../images/aboutme/redenvelope.jpg';
+import scenery1 from '../images/aboutme/scenery.gif';
+import scenery2 from '../images/aboutme/scenery2.jpg';
+import scenery3 from '../images/aboutme/scenery3.gif';
+import blackbelt from '../images/aboutme/blackbelt.jpg';
+import knitting from '../images/aboutme/funfact.jpg';
 import "./styles/AboutMe.css";
 
 function AboutMe() {

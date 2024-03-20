@@ -1,11 +1,17 @@
 .projdetails {
     width: 95vw;
-    background-color: rgb(126, 126, 126);
+    min-width: 1000px;
+    background-color: rgb(131, 128, 128);
     position: absolute;
     left: 2.5vw;
     padding: 20px 0px 10px 0px;
     border-radius: 25px;
     font-family: "Monaco", "Arial";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .projectheader {
@@ -13,12 +19,25 @@
     font-size: 2rem;
     background-color: rgb(146, 181, 145);
 }
+.projectheader:hover {
+    box-shadow: 0 0 30px 10px rgba(66, 120, 197, 0.3);
+}
 
 .projecttext {
+    margin-left: 6%;
+    line-height: 175%;
+    color: white;
+    width: 85%;
     font-size: 1.5rem;
     padding: 25px;
+    text-align: justify;
+    text-justify: auto;
 }
 
 .projectimages {
     width: 50%;
+    border-radius: 20px;
+}
+.projectimages:hover {
+    box-shadow: 0 0 30px 10px rgba(66, 120, 197, 0.3);
 }

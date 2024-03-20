@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // For navigating to different pages
-import asterisk from "../images/asterisk.png"; // center image of home page
+import asterisk from "../images/home/asterisk.png"; // center image of home page
 import "./styles/Home.css"; // css for home page
 
 function Home() {

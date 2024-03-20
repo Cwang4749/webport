@@ -38,8 +38,8 @@ function Portfolio() {
                         {CurrExpanded(index) ? 
                         <div className="expandedcontainer">
                             <p> {project.description} </p>
-                            <Link to={'/Portfolio/' + project.projectName.replaceAll(" ", "-")} state={{name: project.projectName, text: project.text}}>
-                                <div className="projectlink"> TO PROJECT </div>
+                            <Link className="projectlink" to={'/Portfolio/' + project.projectName.replaceAll(" ", "-")} state={{name: project.projectName, text: project.text}}>
+                                 TO PROJECT 
                             </Link>
                         </div> : ""
                         }
