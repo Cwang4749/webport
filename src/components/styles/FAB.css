@@ -1,0 +1,41 @@
+.fabcontainer {
+    width: 75px;
+    z-index: 2;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgb(210, 134, 75);
+    opacity: .9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: safe center;
+    align-items: safe center;
+    transition: .4s;
+    padding: 15px 0px 15px 0px;
+}
+.fabcontainer:hover {
+    padding: 17.5px 0px 17.5px 0px;
+    transition: .4s;
+    width: 85px;
+    bottom: 5px;
+    left: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3);
+}
+
+.fabarrow {
+    position: relative;
+    top: 7px;
+    width: 60%;
+    transform: rotateZ(-45deg);
+}
+
+.fablinks {
+    margin: 2px 0px 2px 0px;
+    font-size: 2rem;
+    font-family: "Monaco", "Arial";
+    font-style: italic;
+}
+.fablinks:hover {
+    color: rgb(255, 243, 243);
+}

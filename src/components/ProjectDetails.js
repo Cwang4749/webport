@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PortData from "./data/PortfolioData.js";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./styles/ProjectDetails.css"
+import FAB from "./FAB.js";
+import "./styles/ProjectDetails.css";
 
 function ProjectDetails() {
     const location = useLocation();
@@ -42,13 +43,15 @@ function ProjectDetails() {
                 <div className="projectheader">{proj_name}</div>
                 {proj_text == null ? "" : proj_text.map((parapraph, pIndex) => {
                     return(
-                        <div key={pIndex}>
+                        <div key={pIndex} className="projectsection">
                             <div className="projecttext">{parapraph}<br/></div>
                             <img src={proj_imgs[pIndex]} className="projectimages"/>
                         </div>
                     )
                 })}
             </div>
+
+            <FAB/>
         </div>
     )
 }
