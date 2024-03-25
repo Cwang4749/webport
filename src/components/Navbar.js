@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import homeicon from "../images/homeicon.png";
-import searchicon from "../images/searchicon.png";
-import foldericon from "../images/foldericon.png";
-import mailicon from "../images/mailicon.png";
-import capicon from "../images/capicon.png";
+import homeicon from "../images/navbar/homeicon.png";
+import searchicon from "../images/navbar/searchicon.png";
+import foldericon from "../images/navbar/foldericon.png";
+import mailicon from "../images/navbar/mailicon.png";
+import capicon from "../images/navbar/capicon.png";
 import "./styles/Navbar.css";
 
 function Navbar(props) {

@@ -3,12 +3,12 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
-import cardbackground from "../images/cardbg.jpg";
-import cardprofile from "../images/cardprofile.jpg";
-import linkedinlogo from "../images/linkedinlogo.png";
-import githublogo from "../images/githublogo.png";
-import gmaillogo from "../images/gmaillogo.png";
-import outlooklogo from "../images/outlooklogo.png";
+import cardbackground from "../images/contact/cardbg.jpg";
+import cardprofile from "../images/contact/cardprofile.jpg";
+import linkedinlogo from "../images/contact/linkedinlogo.png";
+import githublogo from "../images/contact/githublogo.png";
+import gmaillogo from "../images/contact/gmaillogo.png";
+import outlooklogo from "../images/contact/outlooklogo.png";
 import "./styles/Contact.css";
 
 function Contact() {

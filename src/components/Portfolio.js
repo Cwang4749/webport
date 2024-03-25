@@ -33,12 +33,14 @@ function Portfolio() {
                 }
 
                 return(
-                    <div key={index} ref={proj_ref} className="projects" onClick={() => ExpandProj(index)} style={CurrExpanded(index) ? { 'aspect-ratio': '3' } : { 'aspect-ratio': '8'}}>
+                    <div key={index} ref={proj_ref} className="projects" onClick={() => ExpandProj(index)} style={CurrExpanded(index) ? { 'aspectRatio': '3' } : { 'aspectRatio': '8'}}>
                         <p id={CurrExpanded(index) ? "projectname_expanded" : "projectname"}>{project.projectName}</p>
                         {CurrExpanded(index) ? 
                         <div className="expandedcontainer">
                             <p> {project.description} </p>
-                            <Link to={'/Portfolio/' + project.projectName.replaceAll(" ", "-")}> <div className="projectlink"> TO PROJECT </div> </Link>
+                            <Link className="projectlink" to={'/Portfolio/' + project.projectName.replaceAll(" ", "-")} state={{name: project.projectName, text: project.text}}>
+                                 TO PROJECT 
+                            </Link>
                         </div> : ""
                         }
                         <img src={project.preview} className="preview"/>
