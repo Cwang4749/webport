@@ -1,7 +1,8 @@
 .projdetails {
     width: 95vw;
     min-width: 1000px;
-    background-color: #408EC6;
+    /* background-color: #408EC6; */
+    background-color: #1E2761;
     position: absolute;
     left: 2.5vw;
     padding: 20px 0px 10px 0px;
@@ -15,7 +16,8 @@
 }
 
 .projectsection {
-    background-color: #1E2761;
+    background-color: #408EC6;
+    /* background-color: #1E2761; */
     width: 90%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -23,7 +25,8 @@
     padding: 40px;
 }
 .projectsection:hover {
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.176);
+    /* box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.518); */
+    box-shadow: 0 0 15px 3px rgba(76, 85, 94, 0.485);
 }
 
 .projectheader {
@@ -34,7 +37,7 @@
     border-radius: 20px;
 }
 .projectheader:hover {
-    box-shadow: 0 0 30px 10px rgba(243, 104, 104, 0.339);
+    box-shadow: 0 0 15px 3px rgba(243, 104, 104, 0.339);
 }
 
 .projecttext {
@@ -52,5 +55,5 @@
     border-radius: 20px;
 }
 .projectimages:hover {
-    box-shadow: 0 0 30px 10px rgba(66, 120, 197, 0.3);
+    box-shadow: 0 0 30px 10px rgba(171, 121, 102, 0.79);
 }

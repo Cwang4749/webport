@@ -25,9 +25,9 @@
 
 .fabarrow {
     position: relative;
-    top: 7px;
-    width: 60%;
-    transform: rotateZ(-45deg);
+    right: 7px;
+    width: 45px;
+    transform: rotateZ(45deg);
 }
 
 .fablinks {

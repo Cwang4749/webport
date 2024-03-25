@@ -1,12 +1,12 @@
 .flashcard {
-    width: 40%;
+    width: 45%;
     min-width: 300px;
     aspect-ratio: 3/2;
     border-radius: 30px;
     background-color: rgb(193, 207, 218);
 
     position: fixed;
-    left: 40%;
+    left: 35%;
     cursor: pointer;
     display: flex;
     justify-content: safe center;
@@ -27,7 +27,7 @@
     justify-content: safe center;
 
     width: 85%;
-    height: 90%;
+    /* height: 90%; */
     text-align: justify;
 
     line-height: 200%;

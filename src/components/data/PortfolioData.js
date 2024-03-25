@@ -27,14 +27,20 @@ const PortfolioData = [
                 "Originally, I only planned for a single image per flashcard, but afterwards I decided to change the structure of the code such that I can add as many images as I want without having to add extra code. Similar to the Experience page, one of the key-value pairs is an array, this time of images. By controlling another index for the array of images, the user is now able to cycle through all of the images I added for each flashcard. For the final touches, I added a flipping animation every time the flashcard is clicked.",
                 "Every page has its own elements and functionality, and all of the components are responsive and scalable. While the contents of the web app describe me as a person, I hope that the app itself is able to show my sincerity towards computer science."
                 ],
-        images : [webfigma, webproto, webbubble, webnavbar, webtabledata, webtable, webanim, webalert, webflasharray, webflashcard]
+        images : [webfigma, webproto, webbubble, webnavbar, webtabledata, webtable, webanim, webalert, webflasharray, webflashcard],
+        links : ["https://www.figma.com/file/4MJJoEXwVqx3MK0KQT5bpr/Web?type=design&node-id=5%3A99&mode=design&t=yShcxk0IxAI1qbOA-1 ",
+                "https://github.com/Cwang4749/webport"
+                ],
+        linklabels : ["Figma", "Github"]                
     },
     {
         projectName : "Ex 2",
         preview : webpreview,
         description : "example",
         text : ["something"],
-        images : [webpreview]
+        images : [webpreview],
+        links : [""],
+        linklabels : [""]
     }
 ]
 
