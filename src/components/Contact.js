@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { easeOut, motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
@@ -26,7 +27,22 @@ function Contact() {
     }
 
     return(
-        <div className="contactpage">
+        <motion.div
+            initial={{
+                opacity: .5,
+                clipPath: "polygon(50vw 0, 50vw 0, 50vw 100vh, 50vw 100vh)"
+            }}
+            animate={{
+                opacity: 1,
+                clipPath: "polygon(100% 0, 0 0, 0% 100%, 100% 100%)"
+            }}
+            exit={{
+                opacity: 0.5,
+                clipPath: "polygon(50vw 0, 50vw 0, 50vw 100vh, 50vw 100vh)"
+            }}
+            transition={{duration: .3}}
+            className="contactpage"
+        >
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
             <div className="card">
                 <img id="contactcardbg" src={cardbackground}/>
@@ -40,7 +56,7 @@ function Contact() {
 
             {/* Alert Component that shows up with an animation when one of the emails is pressed */}
             <Alert showAlert={show_alert} copiedText={copied_text} setAlert={set_alert}/>
-        </div>
+        </motion.div>
     );
 }
 

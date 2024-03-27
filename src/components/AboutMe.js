@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { motion } from "framer-motion";
+
 import Navbar from "./Navbar";
 import Flashcard from "./Flashcard";
 import profile from "../images/aboutme/profile.jpg";
@@ -37,7 +39,22 @@ function AboutMe() {
     }
 
     return(
-        <div className="aboutmepage">
+        <motion.div
+            initial={{
+                opacity: .5,
+                clipPath: "polygon(50vw 0, 50vw 0, 50vw 100vh, 50vw 100vh)"
+            }}
+            animate={{
+                opacity: 1,
+                clipPath: "polygon(100% 0, 0 0, 0% 100%, 100% 100%)"
+            }}
+            exit={{
+                opacity: 0.5,
+                clipPath: "polygon(50vw 0, 50vw 0, 50vw 100vh, 50vw 100vh)"
+            }}
+            transition={{duration: .3}}
+            className="aboutmepage"
+        >
             <img className="profilepic" src={profile}/>
             <Flashcard active={flashcard_active} setActive={set_flashcard_active} flashCardText={flashcards[curr_circle].description} flashCardImage={flashcards[curr_circle].image} imageIndex={flashcard_image_index} setImageIndex={set_flashcard_image_index}/>
             <div className="am_circlecontainer">
@@ -46,7 +63,7 @@ function AboutMe() {
                 <div className={curr_circle==2 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(2)}/>
             </div>
             <Navbar second_btn={1} third_btn={2} fourth_btn={3} />
-        </div>
+        </motion.div>
     );
 }
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PortData from "./data/PortfolioData.js";
 import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import FAB from "./FAB.js";
 import "./styles/ProjectDetails.css";
 
@@ -42,7 +44,19 @@ function ProjectDetails() {
     }, []);
 
     return(
-        <div style={{'paddingTop' : '5px'}}>
+        <motion.div
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1
+            }}
+            exit={{
+                opacity: 0
+            }}
+            transition={{duration: .3}}
+            style={{'paddingTop' : '5px'}}
+        >
             <div className="projdetails">
                 <div className="projectheader">{proj_name}</div>
                 {proj_text == null ? "" : proj_text.map((parapraph, pIndex) => {
@@ -56,7 +70,7 @@ function ProjectDetails() {
             </div>
 
             <FAB links={links} labels={link_labels}/>
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Popup from "./Popup";
 import "./styles/Experience.css"
@@ -44,7 +45,22 @@ function Experience() {
     const [indent, set_indent] = useState(false);
 
     return(
-        <div>
+        <motion.div
+            initial={{
+                opacity: .5,
+                clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
+            }}
+            animate={{
+                opacity: 1,
+                clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"
+            }}
+            exit={{
+                opacity: 0.5,
+                clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
+            }}
+            transition={{duration: .3}}
+            style={{overflow: 'scroll'}}
+        >
             <div>
                 <div className="tableheader" id="firstheader">EXPERIENCE</div>
                 <Navbar second_btn={0} third_btn={1} fourth_btn={2} />
@@ -81,7 +97,7 @@ function Experience() {
             </div>
 
             <Popup zoom={zoom} setZoom={set_zoom} zoomText={zoom_text} indent={indent}/>
-        </div>
+        </motion.div>
     );
 }
 

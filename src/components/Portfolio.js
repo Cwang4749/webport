@@ -1,5 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import Navbar from "./Navbar";
 import PortData from "./data/PortfolioData.js";
 import "./styles/Portfolio.css"
@@ -13,7 +15,22 @@ function Portfolio() {
     }
 
     return(
-        <div className="PortfolioPage">
+        <motion.div
+            initial={{
+                opacity: .5,
+                clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
+            }}
+            animate={{
+                opacity: 1,
+                clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"
+            }}
+            exit={{
+                opacity: 0.5,
+                clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
+            }}
+            transition={{duration: .3}}
+            className="PortfolioPage"
+        >
             <Navbar second_btn={0} third_btn={2} fourth_btn={3} />
             {PortData.map((project, index) => {
                 const proj_ref = React.createRef();
@@ -47,7 +64,7 @@ function Portfolio() {
                     </div>
                 )
             })}
-        </div>
+        </motion.div>
     );
 }
 
