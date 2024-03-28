@@ -34,6 +34,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Container for the logo and the link has vertical center, left alignment, and limited responsiveness of font */
@@ -72,6 +75,11 @@ a {
     all: unset;
 }
 
+.cl_center {
+    display: flex;
+    align-items: center;
+}
+
 /* All of the logos will be the same width and have the same margins*/
 .logo {
     width: 6%;
@@ -83,7 +91,7 @@ a {
 #linkedinpos {
     position: absolute;
     left: 20%;
-    top: 10%;
+    top: 10%
 }
 #githubpos {
     position: absolute;
@@ -100,6 +108,19 @@ a {
     left: 35%;
     top: 77.5%;
 }
+
+/* #linkedinpos {
+    position: relative;
+}
+#githubpos {
+    position: relative;
+}
+#gmailpos {
+    position: relative;
+}
+#outlookpos {
+    position: relative;
+} */
 
 #cardprofile {
     border-radius: 50%;

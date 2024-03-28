@@ -2,52 +2,33 @@ import React, {useState} from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Popup from "./Popup";
+
+import {work, education, skill} from "./data/ExpData.js"
 import "./styles/Experience.css"
 
 function Experience() {
-    const work = [
-        {
-            year: "2021 - Present",
-            place: "Con Edison",
-            description: ["Computer Aid at the Gas Engineering, Maps and Records Department. Worked with the legacy systems: Project Wise, GIS and Byers before all three systems were replaced and the department transitioned into Adept, Gas Central and ArcFM respectively. Worked on a project for two years that sought to remediate the discrepancies found between the paperwork, the inspection system and the maps."]
-        },
-        {
-            year: "2018 - 2019",
-            place: "NYU Tandon School of Engineering",
-            description: ["Participated in the NYU Tandon ITEST program and learned how to design, build and code a simple robot. Visited an incubator and learned various entrepreneurial concepts. Presented at two different local competitions between program members, one for coding/engineering competency and the other for entrepreneurial ability.", "Brought back on as an assistant supervisor for the new team of Brooklyn Tech interns. Provided insight and helped maintain the productivity of the team."]
-        }
-    ];
-    const education = [
-        {
-            year: "2019 - 2022",
-            place: "Hunter College",
-            description: ["BA in Computer Science, Summa Cum Laude. Worked with Python, C++, React Framework, Flutter Framework, mySQL Database, etc. In addition to the normal curriculum, I also completed 2 Codepath courses: iOS App Development and Cybersecurity."]
-        },
-        {
-            year: "2015 - 2019",
-            place: "Brooklyn Technical High School",
-            description: ["Mechatronics Major: Built projects using Arduinos, RobotC, Autodesk Inventor, 3D printers, CNC machines, etc. Worked with LabVIEW and myRIO to build simple representations of logic. Final project involved a raspberry pi, facial tracking with OpenCV, 3D printing and plasma cutting.", "Weston Research Scholar: Conducted experiments with peers under the supervision of a research mentor to design a clean energy harvester that can also be mass produced. Presented a proof of concept at the 2018 New York City Science and Engineering Fair and reached the finals for the Engineering category."]
-        }
-    ];
-    const skill = [
-        {
-            name: "",
-            description: ""
-        },
-        {
-            name: "",
-            description: ""
-        }
-    ];
 
     const [zoom, set_zoom] = useState(false);
     const [zoom_text, set_text] = useState("");
     const [indent, set_indent] = useState(false);
 
+    const TableVariant = {
+        initial: {
+            y: 30
+        },
+        animate: {
+            y: 0,
+            transition: {
+                duration: 0.3,
+                staggerChildren: 0.07
+            }
+        }
+    };
+
     return(
         <motion.div
             initial={{
-                opacity: .5,
+                opacity: 0,
                 clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
             }}
             animate={{
@@ -55,42 +36,62 @@ function Experience() {
                 clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"
             }}
             exit={{
-                opacity: 0.5,
+                opacity: 0,
                 clipPath: "polygon(100vw 50vh, 0 50vh, 0 50vh, 100vw 50vh)"
             }}
             transition={{duration: .3}}
-            style={{overflow: 'scroll'}}
+            className="experiencepage"
         >
             <div>
-                <div className="tableheader" id="firstheader">EXPERIENCE</div>
+                <motion.div 
+                    initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.7}}
+                    className="tableheader" id="firstheader"
+                >
+                    EXPERIENCE
+                </motion.div>
                 <Navbar second_btn={0} third_btn={1} fourth_btn={2} />
                 <table className="table1">
-                    <tbody>{
-                        work.map((val, key) => {
-                            return(
-                                <tr key={key}>
-                                    <td onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>{val.year}</td>
-                                    <td onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>{val.place}</td>
-                                    <td onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>{val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</td>
-                                </tr>
-                            )
-                        })
-                    }</tbody>
+                    <motion.tbody variants={TableVariant} initial="initial" animate="animate">
+                    {
+                        work.map((val, key) => (
+                            <tr key={key}>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>
+                                    {val.year}
+                                </motion.td>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>
+                                    {val.place}
+                                </motion.td>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>
+                                    {val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}
+                                </motion.td>
+                            </tr>
+                        ))
+                    }</motion.tbody>
                 </table>
 
-                <div className="tableheader">EDUCATION</div>
+                <motion.div
+                    initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.7}}
+                    className="tableheader"
+                >
+                    EDUCATION
+                </motion.div>
                 <table className="table1">
-                    <tbody>{
-                        education.map((val, key) => {
-                            return(
-                                <tr key={key}>
-                                    <td onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>{val.year}</td>
-                                    <td onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>{val.place}</td>
-                                    <td onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>{val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</td>
-                                </tr>
-                            )
-                        })    
-                    }</tbody>
+                    <motion.tbody variants={TableVariant} initial="initial" animate="animate">
+                    {
+                        education.map((val, key) => (
+                            <tr key={key}>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>
+                                    {val.year}
+                                </motion.td>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>
+                                    {val.place}
+                                </motion.td>
+                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>
+                                    {val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}
+                                </motion.td>
+                            </tr>
+                        ))    
+                    }</motion.tbody>
                 </table>
 
                 <div className="tableheader">SKILLS</div>

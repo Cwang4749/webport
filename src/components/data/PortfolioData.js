@@ -41,7 +41,25 @@ const PortfolioData = [
         images : [webpreview],
         links : [""],
         linklabels : [""]
+    },
+    {
+        projectName : "Ex 3",
+        preview : webpreview,
+        description : "example",
+        text : ["something"],
+        images : [webpreview],
+        links : [""],
+        linklabels : [""]
+    },
+    {
+        projectName : "Ex 4",
+        preview : webpreview,
+        description : "example",
+        text : ["something"],
+        images : [webpreview],
+        links : [""],
+        linklabels : [""]
     }
-]
+];
 
 export default PortfolioData;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
@@ -24,7 +24,20 @@ function Contact() {
             set_alert(true);
         }, 10);
         set_copy(text);
-    }
+    };
+
+    const CardLinkVariant = {
+        initial: {
+            translateX: 20
+        },
+        animate: {
+            translateX: 0,
+            transition: {
+                duration: 0.1,
+                staggerChildren: 0.07
+            }
+        }
+    };
 
     return(
         <motion.div
@@ -46,11 +59,41 @@ function Contact() {
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
             <div className="card">
                 <img id="contactcardbg" src={cardbackground}/>
-                <a href="https://linkedin.com/in/calvin-wang-b107a71b9" target="_blank" rel="noreferrer"><div className="cardlink" id="linkedinpos"><img className="logo" src={linkedinlogo}/>https://linkedin.com/in/calvin-wang-b107a71b9</div></a>
-                <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer"><div className="cardlink" id="githubpos"><img className="logo" src={githublogo}/>https://github.com/Cwang4749</div></a>
-                <div className="cardlink" id="gmailpos" onClick={() => CopyText("calvinwang1002@gmail.com")}><img className="logo" src={gmaillogo}/>calvinwang1002@gmail.com</div>
-                <div className="cardlink" id="outlookpos" onClick={() => CopyText("calvin.wang161@myhunter.cuny.edu")}><img className="logo" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu</div>
-                <img loading="lazy" id="cardprofile" src={cardprofile}/>
+                
+                <motion.div variants={CardLinkVariant} initial="initial" animate="animate">
+                    <motion.div
+                        variants={CardLinkVariant}
+                        className="cardlink" id="linkedinpos"
+                    >
+                        <a href="https://linkedin.com/in/calvin-wang-b107a71b9" target="_blank" rel="noreferrer">
+                            <div className="cl_center">
+                                <img className="logo" src={linkedinlogo}/> https://linkedin.com/in/calvin-wang-b107a71b9
+                        </div></a>
+                    </motion.div>
+
+                    <motion.div variants={CardLinkVariant} className="cardlink" id="githubpos">
+                        <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer">
+                            <div className="cl_center">
+                                <img className="logo" src={githublogo}/>https://github.com/Cwang4749
+                        </div></a>
+                    </motion.div>
+
+                    <motion.div variants={CardLinkVariant} className="cardlink" id="gmailpos">
+                        <div className="cl_center" onClick={() => CopyText("calvinwang1002@gmail.com")}>
+                            <img className="logo" src={gmaillogo}/>calvinwang1002@gmail.com
+                        </div>
+                    </motion.div>
+                        
+                    <motion.div variants={CardLinkVariant} className="cardlink" id="outlookpos">
+                        <div className="cl_center" onClick={() => CopyText("calvin.wang161@myhunter.cuny.edu")}>
+                            <img className="logo" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                <motion.img
+                    initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.6}}
+                    loading="lazy" id="cardprofile" src={cardprofile}/>
             </div>
             <Navbar second_btn={0} third_btn={1} fourth_btn={3} />
 

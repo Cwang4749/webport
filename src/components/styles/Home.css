@@ -1,8 +1,8 @@
 /* Create the asterisk, the animation, and its interaction*/
 .asterisk {
-    width: 25vh;
     height: 25vh;
-    position: absolute;
+    aspect-ratio: 1;
+    position: fixed;
     top: 37.5vh;
     left: calc(50vw - 12.5vh);
     transition: 0.2s;
@@ -16,7 +16,6 @@
 }
 
 .asterisk:active {
-    width: 20vh;
     height: 20vh;
     top: 40vh;
     left: calc(50vw - 10vh);
@@ -53,25 +52,25 @@
 
 /* Positions of the bubbles: */
 #aboutme {
-    position: absolute;
+    position: fixed;
     top: 9.375vh;
     left: calc(50vw - 12.5vh);
 }
 
 #portfolio {
-    position: absolute;
+    position: fixed;
     top: 37.5vh;
     left: calc(50vw + 15.625vh);
 }
 
 #contact {
-    position: absolute;
-    bottom: 9.375vh;
+    position: fixed;
+    top: 65.625vh;
     left: calc(50vw - 12.5vh);
 }
 
 #experience {
-    position: absolute;
+    position: fixed;
     top: 37.5vh;
     left: calc(50vw - 40.625vh);
 }

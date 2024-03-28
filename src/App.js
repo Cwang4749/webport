@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route} from "react-router-dom"; // For routing pages
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
 // Import all pages
