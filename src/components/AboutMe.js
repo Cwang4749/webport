@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useAnimate } from "framer-motion";
 
 import Navbar from "./Navbar";
 import Flashcard from "./Flashcard";
@@ -15,6 +15,7 @@ import "./styles/AboutMe.css";
 function AboutMe() {
     const [curr_circle, set_curr_circle] = useState(0);
     const [flashcard_image_index, set_flashcard_image_index] = useState(-1);
+    const [scope, animate] = useAnimate();
 
     const flashcards = [
         {
@@ -32,6 +33,21 @@ function AboutMe() {
     ];
 
     function ChangeCard(flashcard_index) {
+        if(curr_circle < flashcard_index)
+        {
+            animate([
+                [".am_curr_circle", {y: 50}, {duration: .05}],
+                [".am_curr_circle", {y: 0}, {duration: .05}]
+            ]);
+        }
+        else if(curr_circle > flashcard_index)
+        {
+            animate([
+                [".am_curr_circle", {y: -50}, {duration: .05}],
+                [".am_curr_circle", {y: 0}, {duration: .05}]
+            ]);
+        }
+
         set_curr_circle(flashcard_index);
         set_flashcard_image_index(-1);
     }
@@ -57,8 +73,14 @@ function AboutMe() {
                 initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.2, delay: 0.15}}
                 className="profilepic" src={profile}
             />
-            <Flashcard flashCardText={flashcards[curr_circle].description} flashCardImage={flashcards[curr_circle].image} imageIndex={flashcard_image_index} setImageIndex={set_flashcard_image_index}/>
-            <div className="am_circlecontainer">
+
+            <Flashcard flashCardText={flashcards[curr_circle].description}
+                flashCardImage={flashcards[curr_circle].image}
+                imageIndex={flashcard_image_index}
+                setImageIndex={set_flashcard_image_index}
+            />
+
+            <div ref={scope} className="am_circlecontainer">
                 <div className={curr_circle==0 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(0)}/>
                 <div className={curr_circle==1 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(1)}/>
                 <div className={curr_circle==2 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(2)}/>

@@ -59,6 +59,24 @@ const PortfolioData = [
         images : [webpreview],
         links : [""],
         linklabels : [""]
+    },
+    {
+        projectName : "Ex 5",
+        preview : webpreview,
+        description : "example",
+        text : ["something"],
+        images : [webpreview],
+        links : [""],
+        linklabels : [""]
+    },
+    {
+        projectName : "Ex 6",
+        preview : webpreview,
+        description : "example",
+        text : ["something"],
+        images : [webpreview],
+        links : [""],
+        linklabels : [""]
     }
 ];
 

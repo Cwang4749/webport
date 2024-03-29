@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PortData from "./data/PortfolioData.js";
 import { useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 import FAB from "./FAB.js";
 import "./styles/ProjectDetails.css";
@@ -14,6 +14,7 @@ function ProjectDetails() {
     const [links, set_links] = useState(null);
     const [link_labels, set_labels] = useState(null);
     const navigate = useNavigate();
+    const { scrollYProgress } = useScroll();
 
     // 
     useEffect(() => {
@@ -43,6 +44,18 @@ function ProjectDetails() {
         }
     }, []);
 
+    const ProjSecVariant = {
+        initial: {
+            y : 50
+        },
+        animate: {
+            y: 0,
+            transition:  {
+                duration: 0.2
+            }
+        }
+    }
+
     return(
         <motion.div
             initial={{ opacity: 0 }}
@@ -52,13 +65,20 @@ function ProjectDetails() {
             style={{'paddingTop' : '5px'}}
         >
             <div className="projdetails">
+                <motion.div className="progressbar" style={{ scaleY: scrollYProgress }}/>
                 <div className="projectheader">{proj_name}</div>
+
                 {proj_text == null ? "" : proj_text.map((parapraph, pIndex) => {
                     return(
-                        <div key={pIndex} className="projectsection">
+                        <motion.div 
+                            variants={ProjSecVariant} initial="initial" whileInView="animate" viewport={{once: true}}
+                            key={pIndex} className="projectsection"
+                        >
                             <div className="projecttext">{parapraph}<br/></div>
-                            <img src={proj_imgs[pIndex]} className="projectimages"/>
-                        </div>
+                            <motion.img
+                                variants={ProjSecVariant} initial="initial" whileInView="animate" viewport={{once: true}}
+                                src={proj_imgs[pIndex]} className="projectimages"/>
+                        </motion.div>
                     )
                 })}
             </div>
