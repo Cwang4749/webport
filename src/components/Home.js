@@ -12,6 +12,7 @@ function Home() {
             animate={{ opacity: 1, transition: {duration: 0.7} }}
             exit={{ opacity: 0, transition: {duration: 0.4} }}
         >
+
             <motion.div
                 initial={{ y: -30 }}
                 animate={{ y: 0 }}

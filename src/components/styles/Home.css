@@ -8,6 +8,7 @@
     transition: 0.2s;
     animation: spin 6s infinite linear;
     animation-play-state: paused;
+    opacity: 1;
 }
 
 .asterisk:hover {
@@ -42,6 +43,8 @@
     border-radius: 50%;
     display: block;
     transition: .75s;
+    opacity: 1;
+    position: fixed;
 }
 
 .bubble:hover {
@@ -52,25 +55,21 @@
 
 /* Positions of the bubbles: */
 #aboutme {
-    position: fixed;
     top: 9.375vh;
     left: calc(50vw - 12.5vh);
 }
 
 #portfolio {
-    position: fixed;
     top: 37.5vh;
     left: calc(50vw + 15.625vh);
 }
 
 #contact {
-    position: fixed;
     top: 65.625vh;
     left: calc(50vw - 12.5vh);
 }
 
 #experience {
-    position: fixed;
     top: 37.5vh;
     left: calc(50vw - 40.625vh);
 }

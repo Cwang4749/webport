@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 10px;
     left: 10px;
-    background-color: rgb(210, 134, 75);
+    /* background-color: rgb(210, 134, 75); */
     opacity: .9;
     border-radius: 50%;
     display: flex;
@@ -12,6 +12,7 @@
     align-items: safe center;
     transition: .4s;
     padding: 15px 0px 15px 0px;
+    overflow: hidden;
 }
 .fabcontainer:hover {
     padding: 17.5px 0px 17.5px 0px;
@@ -21,6 +22,33 @@
     left: 5px;
     cursor: pointer;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3);
+}
+.fabcontainer::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#FFDEE9, #B5FFFC), linear-gradient(#FA6164, #F71C7A), linear-gradient(#85FFBD, #FFFB7D), linear-gradient(#893BFF, #FF2525);
+    animation: rotateborder 12s linear infinite;
+}
+#fabrest::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 5px 5px 5px 5px;
+    background: rgb(235, 159, 101);
+}
+#fabexpand::after {
+    content: '';
+    border-radius: 20px;
+    position: absolute;
+    inset: 5px 5px 5px 5px;
+    background: rgb(210, 134, 75);
 }
 
 @keyframes rotateborder {

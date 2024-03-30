@@ -7,7 +7,6 @@
     min-width: 1000px;
     min-height: 500px;
     height: 100vh;
-    /* padding: 10px; */
 
     display: flex;
     justify-content: safe center;
@@ -19,24 +18,20 @@
 .card {
     display: block;
     position: absolute;
-    background-color: rgb(202, 202, 202);
+    background-color: rgba(255, 255, 255, 0);
     width: clamp(1000px, 90vw, 160vh);
     aspect-ratio: 15/8;
-    /* height: clamp(500px, 50vw, 80vh); */
-    box-shadow: 0 0 30px 5px rgba(66, 120, 197, 0.3);
-}
-
-.card:hover {
-    box-shadow: 0 0 30px 10px rgba(66, 120, 197, 0.3);
+    overflow: hidden;
 }
 
 #contactcardbg {
-    width: 100%;
+    width: 200%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -50%;
+    cursor: grab;
 }
 
 /* Container for the logo and the link has vertical center, left alignment, and limited responsiveness of font */
@@ -108,19 +103,6 @@ a {
     left: 35%;
     top: 77.5%;
 }
-
-/* #linkedinpos {
-    position: relative;
-}
-#githubpos {
-    position: relative;
-}
-#gmailpos {
-    position: relative;
-}
-#outlookpos {
-    position: relative;
-} */
 
 #cardprofile {
     border-radius: 50%;

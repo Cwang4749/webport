@@ -7,14 +7,11 @@ function FAB(props) {
     const [fab_expand, set_fab_expand] = useState(false);
     const styles = {
         expanded: {
-            // transform: "scale(3) translate(30px, -30px)",
-            // borderRadius: "10px"
             width: "300px",
             borderRadius: "20px",
             transition: ".4s"
         },
         resting: {
-            // transform: "scale(1)"
             width: "75px",
             transition: ".2s"
         }
@@ -22,7 +19,7 @@ function FAB(props) {
 
     return(
         <div>
-            <div className="fabcontainer" onClick={() => set_fab_expand(!fab_expand)} 
+            <div className="fabcontainer" id={fab_expand ? "fabexpand" : "fabrest"} onClick={() => set_fab_expand(!fab_expand)} 
                 style={fab_expand ? styles.expanded : styles.resting}>
                 {fab_expand ? 
                 <div> 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
@@ -15,6 +15,7 @@ import "./styles/Contact.css";
 function Contact() {
     const [copied_text, set_copy] = useState("");
     const [show_alert, set_alert] = useState(false);
+    const bgRef = React.createRef();
 
     // Resets the animation if pressed before animation ends
     function CopyText(text) {
@@ -57,8 +58,9 @@ function Contact() {
             className="contactpage"
         >
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
-            <div className="card">
-                <img id="contactcardbg" src={cardbackground}/>
+            <div className="card" ref={bgRef}>
+                    <motion.img drag="x" dragConstraints={bgRef} dragElastic={0.1}
+                        id="contactcardbg" src={cardbackground}/>
                 
                 <motion.div variants={CardLinkVariant} initial="initial" animate="animate">
                     <motion.div
@@ -92,7 +94,8 @@ function Contact() {
                 </motion.div>
 
                 <motion.img
-                    initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.6}}
+                    initial={{scale: .8}} animate={{scale: 1}} transition={{duration: .6}}
+                    whileHover={{scale: 1.1, transition: {duration: 1, repeat: Infinity, repeatType: "reverse", ease: easeInOut}}}
                     loading="lazy" id="cardprofile" src={cardprofile}/>
             </div>
             <Navbar second_btn={0} third_btn={1} fourth_btn={3} />
