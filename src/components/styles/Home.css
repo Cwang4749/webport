@@ -1,4 +1,25 @@
-/* Create the asterisk, the animation, and its interaction*/
+.panobox {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.pano1 {
+    height: 100%;
+    width: 200%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    cursor: grab;
+    z-index: -1;
+}
+
+/* Create the asterisk; the animation; and its interaction*/
 .asterisk {
     height: 25vh;
     aspect-ratio: 1;
@@ -38,7 +59,7 @@
 .bubble {
     height: 25vh;
     width: 25vh;
-    background-color: #bae8e8a3;
+    background-color: #bae8e8e8;
     color: black;
     border-radius: 50%;
     display: block;

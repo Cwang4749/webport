@@ -1,77 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom"; // For navigating to different pages
-import { motion, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 
+import pano1 from "../images/home/pano1.jpg";
 import asterisk from "../images/home/asterisk.png"; // center image of home page
-import sprite from "../images/home/sprite.png";
 import "./styles/Home.css"; // css for home page
 
 function Home() {
-    let [left_pos, set_left_pos] = useState(0);
-    let [top_pos, set_top_pos] = useState(0);
-    let [rotate_pos, set_rotate_pos] = useState(0);
-    const [scope, animate] = useAnimate();
-
-    const sprite_style = {
-        "width": "7%",
-        "position": "fixed",
-        "top": 0, 
-        "left": 0
-    }
-
-    const moveSprite = e =>  {
-        switch (e.key) {
-            case 'ArrowLeft':
-                if(left_pos > 0) {
-                    set_left_pos(left_pos -= 20);
-                }
-                set_rotate_pos(rotate_pos -= 10);
-                break;
-            case 'ArrowRight':
-                if(left_pos < 300) {
-                    set_left_pos(left_pos += 20);
-                }
-                set_rotate_pos(rotate_pos += 10);
-                break;
-            case 'ArrowUp':
-                if(top_pos > 0) {
-                    set_top_pos(top_pos -= 20);
-                }
-                set_rotate_pos(rotate_pos -= 10);
-                break;
-            case 'ArrowDown':
-                if(top_pos < 300) {
-                    set_top_pos(top_pos += 20);
-                }
-                set_rotate_pos(rotate_pos += 10);
-                break;
-        }
-        if(e.key !== 'r')
-        {
-            animate([[scope.current, {x: left_pos, y: top_pos, rotate: rotate_pos}, {duration: .1}]]);
-        }
-    };
-
-    const resetSprite = e => {
-        if(e.key === 'r') {
-            set_left_pos(0);
-            set_top_pos(0);
-            set_rotate_pos(0);
-            setTimeout(() => {
-                animate([[scope.current, {x: left_pos, y: top_pos, rotate: rotate_pos}, {duration: 1}]]);
-            }, 10);
-        }
-    }
-
-    useEffect(() => {
-        document.addEventListener('keydown', moveSprite);
-        document.addEventListener('keyup', resetSprite);
-    
-        return function () {
-            document.removeEventListener('keydown', moveSprite);
-            document.removeEventListener('keyup', resetSprite);
-        };
-    }, [top_pos, left_pos]);
+    const pano1ref = React.createRef();
 
     return(
         <motion.div
@@ -79,6 +15,9 @@ function Home() {
             animate={{ opacity: 1, transition: {duration: 0.7} }}
             exit={{ opacity: 0, transition: {duration: 0.4} }}
         >
+            <div ref={pano1ref} className="panobox">
+                <motion.img className="pano1" src={pano1} drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
+            </div>
 
             <motion.div
                 initial={{ y: -30 }}
@@ -140,7 +79,6 @@ function Home() {
                 <img className="asterisk" src={asterisk} />
             </motion.div>
 
-            <motion.img ref={scope} src={sprite} style={sprite_style}/>
         </motion.div>
     );
 }

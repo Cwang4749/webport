@@ -12,6 +12,7 @@
     justify-content: safe center;
     align-items: safe center;
     overflow: scroll;
+    background: linear-gradient(90deg, #fee140dd 0%, #fa7099d0 100%);
 }
 
 /* Basica styling of the business card, responsive width + height to a degree*/

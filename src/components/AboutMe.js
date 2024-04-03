@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useAnimate } from "framer-motion";
 
 import Navbar from "./Navbar";
+import Sprite from "./Sprite";
 import Flashcard from "./Flashcard";
 import FlashcardData from "./data/FlashcardData";
 import profile from "../images/aboutme/profile.jpg";
@@ -11,8 +12,6 @@ function AboutMe() {
     const [curr_circle, set_curr_circle] = useState(0);
     const [flashcard_image_index, set_flashcard_image_index] = useState(-1);
     const [scope, animate] = useAnimate();
-
-    
 
     function ChangeCard(flashcard_index) {
         if(curr_circle < flashcard_index)
@@ -68,6 +67,8 @@ function AboutMe() {
                 <div className={curr_circle==2 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(2)}/>
             </div>
             <Navbar second_btn={1} third_btn={2} fourth_btn={3} />
+            
+            <Sprite/>
         </motion.div>
     );
 }
