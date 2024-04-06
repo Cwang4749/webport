@@ -6,6 +6,7 @@
     left: 0;
     overflow: hidden;
     z-index: -2;
+    background-image: linear-gradient(to bottom, #5E9FE0, #9CD4EE);
 }
 
 .pano1 {

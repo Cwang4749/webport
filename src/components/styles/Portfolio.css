@@ -6,6 +6,19 @@
     display: flex;
     overflow-x: hidden;
 }
+.PortfolioPage::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    background: url("../../images/portfolio/fireworks.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 
 .projects {
     width: 100%;
@@ -26,7 +39,7 @@
 }
 
 .projects:hover {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 5px rgba(187, 187, 187, 0.5);
     cursor: pointer;
 }
 

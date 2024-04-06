@@ -1,7 +1,8 @@
 .aboutmepage {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(166, 164, 147);
+    /* background-color: rgb(166, 164, 147); */
+    background-image: linear-gradient(to bottom left, #9c522d, #e8eab2);
     display: flex;
     align-items: center;
     user-select: none;

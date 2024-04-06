@@ -39,7 +39,8 @@ function Sprite() {
         "left": "0",
         "zIndex": "1",
         "aspectRatio": "1",
-        "cursor": "pointer"
+        "cursor": "pointer",
+        "outline": "none"
     }
 
     const moveSprite = e =>  {
@@ -97,7 +98,11 @@ function Sprite() {
     }, [top_pos, left_pos]);
 
     return(
-        <motion.img ref={spriteref} src={sprites[curr_sprite]} onClick={() => changeSprite()} style={sprite_style}/>
+        <motion.img 
+            ref={spriteref} src={sprites[curr_sprite]} onClick={() => changeSprite()}
+            style={sprite_style} whileHover={{ scale: 1.05, transition: { duration: .2 } }}
+            whileTap={{ scale: 0.95 }}
+        />
     );
 }
 
