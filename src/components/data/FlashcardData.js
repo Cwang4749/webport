@@ -1,9 +1,9 @@
-import redenvelope from '../../images/aboutme/redenvelope.jpg';
+import redenvelope from '../../images/aboutme/redenvelope.webp';
 import scenery1 from '../../images/aboutme/scenery.gif';
-import scenery2 from '../../images/aboutme/scenery2.jpg';
+import scenery2 from '../../images/aboutme/scenery2.webp';
 import scenery3 from '../../images/aboutme/scenery3.gif';
-import blackbelt from '../../images/aboutme/blackbelt.jpg';
-import knitting from '../../images/aboutme/funfact.jpg';
+import blackbelt from '../../images/aboutme/blackbelt.webp';
+import knitting from '../../images/aboutme/funfact.webp';
 
 const FlashcardData = [
     {

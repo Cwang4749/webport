@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"; // For navigating to different pages
 import { motion } from "framer-motion";
 
-import pano1 from "../images/home/pano1.jpg";
+import pano1 from "../images/home/pano1.webp";
 import asterisk from "../images/home/asterisk.png"; // center image of home page
 import "./styles/Home.css"; // css for home page
 
@@ -16,7 +16,7 @@ function Home() {
             exit={{ opacity: 0, transition: {duration: 0.4} }}
         >
             <div ref={pano1ref} className="panobox">
-                <motion.img className="pano1" src={pano1} drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
+                <motion.img className="pano1" loading="lazy" src={pano1} drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
             </div>
 
             <motion.div
@@ -76,7 +76,7 @@ function Home() {
                 animate={{ scale: 1 }}
                 transition={{ duration: .2}}
             >
-                <img className="asterisk" src={asterisk} />
+                <img className="asterisk" loading="lazy" src={asterisk} />
             </motion.div>
 
         </motion.div>

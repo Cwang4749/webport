@@ -78,7 +78,7 @@ function Portfolio() {
                                 </Link>
                             </div> : ""
                             }
-                            <img src={project.preview} className="preview"/>
+                            <img loading="lazy" src={project.preview} className="preview"/>
                         </div>
                     </motion.div>
                 )

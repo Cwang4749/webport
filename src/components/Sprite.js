@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { motion, useAnimate } from "framer-motion";
-import sprite from "../images/aboutme/sprite.png";
+import sprite from "../images/aboutme/sprite.webp";
 import heart from "../images/aboutme/heart.png";
-import pig from "../images/aboutme/pig.png";
-import flower from "../images/aboutme/flower.png";
-import cube from "../images/aboutme/cube.png";
+import pig from "../images/aboutme/pig.webp";
+import flower from "../images/aboutme/flower.webp";
+import cube from "../images/aboutme/cube.webp";
 
 function Sprite() {
     const [spriteref, animatesprite] = useAnimate();
@@ -99,7 +99,8 @@ function Sprite() {
 
     return(
         <motion.img 
-            ref={spriteref} src={sprites[curr_sprite]} onClick={() => changeSprite()}
+            ref={spriteref} loading="lazy" src={sprites[curr_sprite]} 
+            onClick={() => changeSprite()}
             style={sprite_style} whileHover={{ scale: 1.05, transition: { duration: .2 } }}
             whileTap={{ scale: 0.95 }}
         />

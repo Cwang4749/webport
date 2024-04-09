@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, useAnimate } from "framer-motion";
 
 import Navbar from "./Navbar";
 import Sprite from "./Sprite";
 import Flashcard from "./Flashcard";
 import FlashcardData from "./data/FlashcardData";
-import profile from "../images/aboutme/profile.jpg";
+import profile from "../images/aboutme/profile.webp";
 import "./styles/AboutMe.css";
 
 function AboutMe() {
@@ -52,7 +52,7 @@ function AboutMe() {
         >
             <motion.img
                 initial={{scale: 0.8}} animate={{scale: 1}} transition={{duration: 0.2, delay: 0.15}}
-                className="profilepic" src={profile}
+                className="profilepic" loading="lazy" src={profile}
             />
 
             <Flashcard flashCardText={FlashcardData[curr_circle].description}

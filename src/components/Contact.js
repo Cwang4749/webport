@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
-import cardbackground from "../images/contact/cardbg.jpg";
-import cardprofile from "../images/contact/cardprofile.jpg";
+import cardbackground from "../images/contact/cardbg.webp";
+import cardprofile from "../images/contact/cardprofile.webp";
 import linkedinlogo from "../images/contact/linkedinlogo.png";
 import githublogo from "../images/contact/githublogo.png";
 import gmaillogo from "../images/contact/gmaillogo.png";
@@ -60,7 +60,7 @@ function Contact() {
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
             <div className="card" ref={bgRef}>
                     <motion.img drag="x" dragConstraints={bgRef} dragElastic={0.1}
-                        id="contactcardbg" src={cardbackground}/>
+                        id="contactcardbg" loading="lazy" src={cardbackground}/>
                 
                 <motion.div variants={CardLinkVariant} initial="initial" animate="animate">
                     <motion.div
@@ -69,26 +69,26 @@ function Contact() {
                     >
                         <a href="https://linkedin.com/in/calvin-wang-b107a71b9" target="_blank" rel="noreferrer">
                             <div className="cl_center">
-                                <img className="logo" src={linkedinlogo}/> https://linkedin.com/in/calvin-wang-b107a71b9
+                                <img className="logo" loading="lazy" src={linkedinlogo}/> https://linkedin.com/in/calvin-wang-b107a71b9
                         </div></a>
                     </motion.div>
 
                     <motion.div variants={CardLinkVariant} className="cardlink" id="githubpos">
                         <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer">
                             <div className="cl_center">
-                                <img className="logo" src={githublogo}/>https://github.com/Cwang4749
+                                <img className="logo" loading="lazy" src={githublogo}/>https://github.com/Cwang4749
                         </div></a>
                     </motion.div>
 
                     <motion.div variants={CardLinkVariant} className="cardlink" id="gmailpos">
                         <div className="cl_center" onClick={() => CopyText("calvinwang1002@gmail.com")}>
-                            <img className="logo" src={gmaillogo}/>calvinwang1002@gmail.com
+                            <img className="logo" loading="lazy" src={gmaillogo}/>calvinwang1002@gmail.com
                         </div>
                     </motion.div>
                         
                     <motion.div variants={CardLinkVariant} className="cardlink" id="outlookpos">
                         <div className="cl_center" onClick={() => CopyText("calvin.wang161@myhunter.cuny.edu")}>
-                            <img className="logo" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu
+                            <img className="logo" loading="lazy" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu
                         </div>
                     </motion.div>
                 </motion.div>
