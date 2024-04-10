@@ -25,14 +25,16 @@ const education = [
 ];
 
 const skill = [
-    {
-        name: "",
-        description: ""
-    },
-    {
-        name: "",
-        description: ""
-    }
+    "C++",
+    "React / JSX / Javascript / HTML / CSS",
+    "Flutter / Dart",
+    "Swift",
+    "SQL",
+    "Teamwork",
+    "Communication",
+    "Flexibility",
+    "Patience",
+    "Time Management"
 ];
 
 export {work, education, skill}

@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Popup from "./Popup";
 
-import {work, education, skill} from "./data/ExpData.js"
-import "./styles/Experience.css"
+import {work, education, skill} from "./data/ExpData.js";
+import rocket from "../images/rocket.png";
+import "./styles/Experience.css";
 
 function Experience() {
 
@@ -21,6 +22,19 @@ function Experience() {
             transition: {
                 duration: 0.3,
                 staggerChildren: 0.07
+            }
+        }
+    };
+
+    const SkillVariant = {
+        initial: {
+            x: "90vw"
+        },
+        animate: {
+            x: 0,
+            transition: {
+                duration: 1.5,
+                staggerChildren: 0.1
             }
         }
     };
@@ -95,6 +109,17 @@ function Experience() {
                 </table>
 
                 <div className="tableheader">SKILLS</div>
+                <motion.div className="skilltable"
+                    variants={SkillVariant} initial="initial"
+                    whileInView="animate" viewport={{once: true}}
+                >
+                    {skill.map((val, key) => (
+                        <motion.div key={key} className="skillbox" variants={SkillVariant}>
+                            <img loading="lazy" src={rocket} style={{"height": "100%"}}/>
+                            <div className="skill" onClick={() => {set_zoom(true); set_text(val); set_indent(false)}}>{val}</div>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
 
             <Popup zoom={zoom} setZoom={set_zoom} zoomText={zoom_text} indent={indent}/>

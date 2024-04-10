@@ -87,3 +87,39 @@
     text-align: left;
     text-indent: 7%;
 }
+
+.skilltable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95vw; 
+    min-width: 1000px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+.skillbox {
+    height: 70px;
+    width: max-content;
+    display: flex;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    background: linear-gradient(to left, #f3f2ecb9, #ffefba);
+    color: #0f548c;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px 3px 3px 15px;
+    position: relative;
+    top: 10px;
+}
+.skill:hover {
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    cursor: pointer;
+}
