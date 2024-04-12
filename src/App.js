@@ -11,10 +11,13 @@ import Contact from './components/Contact';
 import Experience from './components/Experience';
 import ProjectDetails from './components/ProjectDetails';
 
+import HelpModal from './components/HelpModal'; // Help modal is on all pages
+
 function App() {
   const loc = useLocation();
   return (
     <div className="App">
+      <HelpModal/>
       <AnimatePresence mode="wait" initial={true}>
         <Routes onEnter={() => window.scrollTo(0, 0)} location={loc} key={loc.key}>
           <Route exact path="/" element={<Home/>}/>

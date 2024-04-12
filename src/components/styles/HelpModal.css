@@ -1,0 +1,56 @@
+.helpbutton {
+    width: 55px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: rgba(240, 230, 195, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.escapebutton {
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.helpmodal {
+    z-index: 3;
+    width: 100vw;
+    min-width: 500px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: "Monaco", "Arial";
+    font-style: italic;
+    overscroll-behavior: contain;
+    overflow: scroll;
+}
+
+.helpnav {
+    width: 25%;
+    border-right: 1px solid white;
+    min-height: 100vh;
+}
+
+.helpnavsection {
+    height: 12vh;
+    width: 100%;
+    min-height: 70px;
+    background-color: blue;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+    margin-bottom: 10px;
+}
