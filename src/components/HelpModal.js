@@ -9,6 +9,7 @@ import "./styles/HelpModal.css";
 function HelpModal() {
     const [scope, animate] = useAnimate();
     const [help_modal, set_help_modal] = useState(false);
+    const [curr_section, set_section] = useState(0);
     const loc = useLocation();
 
     const HoverHelp = () => {
@@ -20,7 +21,8 @@ function HelpModal() {
     }
 
     const HelpVariant = {
-        hidden: {y: "-100vh"},
+        hidden: {
+            y: "-100vh"},
         visible: {y: 0}
     }
 
@@ -32,40 +34,47 @@ function HelpModal() {
     return(
         <div>
             
-            <div className="helpbutton">
-                <motion.img
-                    ref={scope} onHoverStart={() => HoverHelp()} loading="lazy" src={questionmark}
-                    style={{"height": "80%"}} onClick={() => set_help_modal(true)}
-                />
-            </div>
+            <motion.div className="helpbutton" ref={scope} onHoverStart={() => HoverHelp()} onClick={() => set_help_modal(true)}>
+                <img loading="lazy" src={questionmark} style={{"height": "80%"}} />
+            </motion.div>
  
-            <AnimatePresence mode="wait" initial={true}>
+            <AnimatePresence mode="wait" initial={false}>
                 {help_modal && 
                     <motion.div transition={{type: "spring", bounce: 0.2, duration: 0.5}}
                         variants={HelpVariant} initial="hidden" exit="hidden" animate="visible"
                         className="helpmodal" 
                     >
                         {/* left side of modal is navbar for different sections */}
-                        <div className="helpnav">
+                        <motion.div className="helpnav" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: .8}}>
                             {HelpData.map((section, sectionindex) => {
                                 return(
-                                    <div key={sectionindex} className="helpnavsection">
+                                    <div key={sectionindex} className="helpnavsection"
+                                        id={curr_section == sectionindex && "currnavsection"}
+                                        onClick={() => set_section(sectionindex)}
+                                    >
                                         {section.section}
                                     </div>
                                 )
-                            })
-
-                            }
-                        </div>
+                            })}
+                        </motion.div>
 
                         {/* right side of modal conditionally renders based on navbar */}
-                        <div>
+                        <motion.div className="helpfeatures">
+                            {HelpData[curr_section].text.map((feature, ftindex) => {
+                                return(
+                                    <div className="feature">
+                                        {feature}
+                                        <br/><br/>
+                                        <img src={HelpData[curr_section].images[ftindex]} style={{"width": "90%", "borderRadius": "5px"}}/>
+                                    </div>
+                                )
+                            })}
+                        </motion.div>
 
-                        </div>
-
-                        <img 
-                            src={esc} onClick={() => set_help_modal(false)}
-                            className="escapebutton"
+                        <motion.img 
+                            initial={{x: 60, rotate: 90}} animate={{x: 0, rotate: 0}} transition={{duration: .8}}
+                            whileHover={{opacity: 1, transition: {duration: 0.5}}}
+                            src={esc} onClick={() => set_help_modal(false)} className="escapebutton"
                         />
                     </motion.div>
                 }

@@ -3,7 +3,8 @@
     background-color: rgb(25, 24, 24);
     width: 100vw;
     height: 100vh;
-    overflow: scroll;
+    min-width: 1000px;
+    overflow-x: hidden;
 }
 .experiencepage::before {
     content: "";
@@ -98,6 +99,7 @@
     margin-right: auto;
     margin-top: 35px;
     margin-bottom: 50px;
+    overflow: hidden;
 }
 .skillbox {
     height: 70px;

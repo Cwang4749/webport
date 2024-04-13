@@ -1,4 +1,11 @@
 import bubblehover from "../../images/help/bubblehover.jpg";
+import asteriskhover from "../../images/help/asteriskhover.jpg";
+import bgdrag from "../../images/help/bgdrag.jpg";
+import navflow from "../../images/help/navbarflow.webp";
+import navstates from "../../images/help/navstates.jpg";
+import spritemove from "../../images/help/spritemove.jpg";
+import spriteflow from "../../images/help/spriteflow.jpg";
+import flashcardflip from "../../images/help/flashcardflip.webp";
 
 const HelpData = [
     {
@@ -10,34 +17,32 @@ const HelpData = [
         ],
         images: [
             bubblehover,
-            bubblehover,
-            bubblehover
+            asteriskhover,
+            bgdrag
         ]
     },
     {
         section: "Navbar",
         text: [
-            "A",
-            "A",
-            "A"
+            "The magnifying glass icon navigates to the about me page, the folder icon to the portfolio page, the mail icon to the contact page, and the cap icon to the experience page.",
+            "The navbar changes depending on which page the user is currently on. The priority is as follows: Home, About Me, Portfolio, Contact, Experience."
         ],
         images: [
-            bubblehover,
-            bubblehover,
-            bubblehover
+            navflow,
+            navstates
         ]
     },
     {
         section: "About Me",
         text: [
-            "A",
-            "A",
-            "A"
+            "The sprite on the screen is movable with the arrow keys. Pressing the r button two times will reset the sprite to its original position.",
+            "Clicking on the sprite will cycle through 5 different sprites.",
+            "Clicking the gray circles will change the current set of flashcards. Clicking the flashcard will cycle through the corresponding text and images for that set."
         ],
         images: [
-            bubblehover,
-            bubblehover,
-            bubblehover
+            spritemove,
+            spriteflow,
+            flashcardflip
         ]
     },
     {

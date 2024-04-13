@@ -6,6 +6,7 @@ import Popup from "./Popup";
 import {work, education, skill} from "./data/ExpData.js";
 import rocket from "../images/rocket.png";
 import "./styles/Experience.css";
+import { isVisible } from "@testing-library/user-event/dist/utils/index.js";
 
 function Experience() {
 
