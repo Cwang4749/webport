@@ -25,14 +25,16 @@ const education = [
 ];
 
 const skill = [
+    "Ardunio C",
     "C++",
-    "React / JSX / Javascript / HTML / CSS",
-    "Flutter / Dart",
-    "Swift",
     "SQL",
+    "Swift",
+    "Flutter / Dart",
+    "React / JSX / JS / HTML / CSS",
     "Teamwork",
-    "Communication",
     "Flexibility",
+    "Adaptability",
+    "Communication",
     "Patience",
     "Time Management"
 ];

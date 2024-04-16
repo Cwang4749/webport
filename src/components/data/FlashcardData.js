@@ -7,7 +7,7 @@ import knitting from '../../images/aboutme/funfact.webp';
 
 const FlashcardData = [
     {
-        description: ["I was born and raised in New York City. My parents are Chinese immigrants who met in the US."],
+        description: ["My name is Calvin Wang, and I was born and raised in New York City. My parents are Chinese immigrants who met in the US."],
         image: [redenvelope]
     },
     {

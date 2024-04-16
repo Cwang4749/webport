@@ -20,16 +20,49 @@ function HelpModal() {
         ]);
     }
 
+    function SetSection(indx) {
+        document.getElementById("top").scrollTo({ top: 0, behavior: 'smooth' });
+        set_section(indx);
+    }
+
     const HelpVariant = {
-        hidden: {
-            y: "-100vh"},
-        visible: {y: 0}
+        hidden: { y: "-100vh" },
+        visible: { y: 0 }
+    }
+
+    const FeatureVariant = {
+        initial: { opacity: 0, scale: 0.7 },
+        animate: { opacity: 1, scale: 1 }
     }
 
     // Resets the modal whenever the route changes (ex: back button pressed)
     useEffect(() => {
         set_help_modal(false);
     },[loc]);
+
+    useEffect(() => {
+        var buf = loc.pathname.replaceAll("-", " ");
+        switch (buf.toUpperCase())
+        {
+            case "/":
+                set_section(0);
+                break;
+            case "/ABOUTME":
+                set_section(2);
+                break;
+            case "/PORTFOLIO":
+                set_section(3);
+                break;
+            case "/CONTACT":
+                set_section(4);
+                break;
+            case "/EXPERIENCE":
+                set_section(5);
+                break;
+            default:
+                break;
+        }
+    },[help_modal]);
 
     return(
         <div>
@@ -42,7 +75,7 @@ function HelpModal() {
                 {help_modal && 
                     <motion.div transition={{type: "spring", bounce: 0.2, duration: 0.5}}
                         variants={HelpVariant} initial="hidden" exit="hidden" animate="visible"
-                        className="helpmodal" 
+                        className="helpmodal" id="top"
                     >
                         {/* left side of modal is navbar for different sections */}
                         <motion.div className="helpnav" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: .8}}>
@@ -50,7 +83,7 @@ function HelpModal() {
                                 return(
                                     <div key={sectionindex} className="helpnavsection"
                                         id={curr_section == sectionindex && "currnavsection"}
-                                        onClick={() => set_section(sectionindex)}
+                                        onClick={() => SetSection(sectionindex)}
                                     >
                                         {section.section}
                                     </div>
@@ -59,14 +92,19 @@ function HelpModal() {
                         </motion.div>
 
                         {/* right side of modal conditionally renders based on navbar */}
-                        <motion.div className="helpfeatures">
+                        <motion.div className="helpfeatures" variants={FeatureVariant} initial="initial"
+                            animate="animate" transition={{ staggerChildren: .3 }}
+                        >
                             {HelpData[curr_section].text.map((feature, ftindex) => {
                                 return(
-                                    <div className="feature">
+                                    <motion.div className="feature"
+                                        variants={FeatureVariant}
+                                        transition={{duration: .5}}
+                                    >
                                         {feature}
                                         <br/><br/>
                                         <img src={HelpData[curr_section].images[ftindex]} style={{"width": "90%", "borderRadius": "5px"}}/>
-                                    </div>
+                                    </motion.div>
                                 )
                             })}
                         </motion.div>

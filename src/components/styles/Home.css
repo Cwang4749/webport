@@ -20,6 +20,21 @@
     z-index: -1;
 }
 
+.hello {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    text-align: left;
+    font-family: "Monaco", "Arial";
+    font-size: 1.5rem;
+    line-height: 170%;
+    color: #ae1b1b;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 5px;
+}
+
 /* Create the asterisk; the animation; and its interaction*/
 .asterisk {
     height: 25vh;

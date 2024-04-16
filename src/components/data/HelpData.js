@@ -6,19 +6,26 @@ import navstates from "../../images/help/navstates.jpg";
 import spritemove from "../../images/help/spritemove.jpg";
 import spriteflow from "../../images/help/spriteflow.jpg";
 import flashcardflip from "../../images/help/flashcardflip.webp";
+import projexpand from "../../images/help/projexpand.webp";
+import projdetails from "../../images/help/projdetails.webp";
+import fabexpand from "../../images/help/fabexpand.webp";
+import emailcopy from "../../images/help/emailcopy.jpg";
+import contactdrag from "../../images/help/contactdrag.jpg";
+import pfphover from "../../images/help/pfphover.jpg";
+import popupexpand from "../../images/help/popupexpand.webp";
 
 const HelpData = [
     {
         section: "Home",
         text: [
             "Every bubble expands to reveal what the page contains. Clicking on the bubble will route to that specific page.",
-            "The asterisk in the center has a hover animation. Clicking without releasing the image will reverse the spin.",
-            "The background image is draggable in the x axis. Dragging will reveal more of the panorama."
+            "The background image is draggable in the x axis. Dragging will reveal more of the panorama.",
+            "The asterisk in the center has a hover animation. Clicking without releasing the image will reverse the spin."
         ],
         images: [
             bubblehover,
-            asteriskhover,
-            bgdrag
+            bgdrag,
+            asteriskhover
         ]
     },
     {
@@ -48,40 +55,36 @@ const HelpData = [
     {
         section: "Portfolio",
         text: [
-            "A",
-            "A",
-            "A"
+            "Clicking on each project will expand the preview to show some more basic information about it.",
+            "Clicking the button will redirect to a more in depth explanation of the project.",
+            "The floating action button will reveal a set of links related to the project."
         ],
         images: [
-            bubblehover,
-            bubblehover,
-            bubblehover
+            projexpand,
+            projdetails,
+            fabexpand
         ]
     },
     {
         section: "Contact",
         text: [
-            "A",
-            "A",
-            "A"
+            "The two links at the top will open in a new tab when clicked. Clicking either of the two emails at the bottom will copy the email that was pressed to the user's clipboard.",
+            "Just like the home page, the contact card background is also a draggable panorama.",
+            "The profile picture at the bottom left has a hovering animation."
         ],
         images: [
-            bubblehover,
-            bubblehover,
-            bubblehover
+            emailcopy,
+            contactdrag,
+            pfphover
         ]
     },
     {
         section: "Experience",
         text: [
-            "A",
-            "A",
-            "A"
+            "Every cell in each of the tables (including skills) is clickable, and will reveal a modal with the same information displayed in a more legible manner."
         ],
         images: [
-            bubblehover,
-            bubblehover,
-            bubblehover
+            popupexpand
         ]
     }
 ];

@@ -9,16 +9,38 @@ import "./styles/Home.css"; // css for home page
 function Home() {
     const pano1ref = React.createRef();
 
+    const HelloVariant = {
+        initial: {
+            opacity: 0,
+            y: 40
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+        }
+    }
+
     return(
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: {duration: 0.7} }}
             exit={{ opacity: 0, transition: {duration: 0.4} }}
         >
+            {/* Draggable background, with the boundaries set to the div */}
             <div ref={pano1ref} className="panobox">
                 <motion.img className="pano1" loading="lazy" src={pano1} drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
             </div>
 
+            <div className="hello">
+                <motion.div variants={HelloVariant} initial="initial" animate="animate" transition={{duration: 1}}>
+                    HELLO,
+                </motion.div>
+                <motion.div variants={HelloVariant} initial="initial" animate="animate" transition={{duration: 1, delay: .5}}>
+                    MY NAME IS CALVIN
+                </motion.div>
+            </div>
+
+            {/* Following 4 divs are the bubbles */}
             <motion.div
                 initial={{ y: -30 }}
                 animate={{ y: 0 }}
@@ -71,6 +93,7 @@ function Home() {
                 </Link>
             </motion.div>
 
+            {/* Animated Asterisk */}
             <motion.div
                 initial={{ scale: 0.9}}
                 animate={{ scale: 1 }}
