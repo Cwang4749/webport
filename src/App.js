@@ -12,6 +12,7 @@ import Experience from './components/Experience';
 import ProjectDetails from './components/ProjectDetails';
 
 import HelpModal from './components/HelpModal'; // Help modal is on all pages
+import PageError from './components/PageError'; // 404 page
 
 function App() {
   const loc = useLocation();
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/Contact" element={<Contact/>}/>
           <Route exact path="/Experience" element={<Experience/>}/>
           <Route path="/Portfolio/:state" element={<ProjectDetails/>}/>
+          <Route path='*' element={<PageError/>}/>
         </Routes>
       </AnimatePresence>
     </div>

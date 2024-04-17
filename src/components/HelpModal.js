@@ -60,6 +60,7 @@ function HelpModal() {
                 set_section(5);
                 break;
             default:
+                set_section(3);
                 break;
         }
     },[help_modal]);

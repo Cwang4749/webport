@@ -11,6 +11,7 @@ import projdetails from "../../images/help/projdetails.webp";
 import fabexpand from "../../images/help/fabexpand.webp";
 import emailcopy from "../../images/help/emailcopy.jpg";
 import contactdrag from "../../images/help/contactdrag.jpg";
+import doubleclick from "../../images/help/doubleclick.webp";
 import pfphover from "../../images/help/pfphover.jpg";
 import popupexpand from "../../images/help/popupexpand.webp";
 
@@ -70,11 +71,13 @@ const HelpData = [
         text: [
             "The two links at the top will open in a new tab when clicked. Clicking either of the two emails at the bottom will copy the email that was pressed to the user's clipboard.",
             "Just like the home page, the contact card background is also a draggable panorama.",
+            "Double clicking the contact card background will set the card to full screen. Double clicking it when it is already full screen will revert it to the original size.",
             "The profile picture at the bottom left has a hovering animation."
         ],
         images: [
             emailcopy,
             contactdrag,
+            doubleclick,
             pfphover
         ]
     },

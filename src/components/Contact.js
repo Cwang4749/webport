@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { easeInOut, motion } from "framer-motion";
+import { easeInOut, motion, useAnimate } from "framer-motion";
 import Navbar from "./Navbar";
 import Alert from "./Alert";
 
@@ -15,7 +15,9 @@ import "./styles/Contact.css";
 function Contact() {
     const [copied_text, set_copy] = useState("");
     const [show_alert, set_alert] = useState(false);
-    const bgRef = React.createRef();
+    const [full_screen, set_full_screen] = useState(false);
+    const [bgRef, animate] = useAnimate();
+    // const bgRef = React.createRef();
 
     // Resets the animation if pressed before animation ends
     function CopyText(text) {
@@ -40,6 +42,21 @@ function Contact() {
         }
     };
 
+    function DoubleClickBG() {
+        if(full_screen)
+        {
+            animate([
+                [bgRef.current, {'width': '90vw', 'height': 'auto'}, {duration: 0.1}]
+            ]);
+        }
+        else {
+            animate([
+                [bgRef.current, {'width': '100vw', 'height': '100vh'}, {duration: 0.2}]
+            ]);
+        }
+        set_full_screen(!full_screen);
+    }
+
     return(
         <motion.div
             initial={{
@@ -58,9 +75,13 @@ function Contact() {
             className="contactpage"
         >
             {/* Business card: external links + emails; links open in new tabs and emails are copied upon click */}
-            <div className="card" ref={bgRef}>
-                    <motion.img drag="x" dragConstraints={bgRef} dragElastic={0.1}
-                        id="contactcardbg" loading="lazy" src={cardbackground}/>
+            <motion.div className="card" ref={bgRef}
+                
+                // style={full_screen ? {'width': '100vw', 'height': '100vh'} : {}}
+            >
+                    <motion.img drag="x" dragConstraints={bgRef} dragElastic={0.05}
+                        id="contactcardbg" loading="lazy" src={cardbackground}
+                        onDoubleClick={() => DoubleClickBG()}/>
                 
                 <motion.div variants={CardLinkVariant} initial="initial" animate="animate">
                     <motion.div
@@ -97,7 +118,7 @@ function Contact() {
                     initial={{scale: .8}} animate={{scale: 1}} transition={{duration: .6}}
                     whileHover={{scale: 1.1, transition: {duration: 1, repeat: Infinity, repeatType: "reverse", ease: easeInOut}}}
                     loading="lazy" id="cardprofile" src={cardprofile}/>
-            </div>
+            </motion.div>
             <Navbar second_btn={0} third_btn={1} fourth_btn={3} />
 
             {/* Alert Component that shows up with an animation when one of the emails is pressed */}

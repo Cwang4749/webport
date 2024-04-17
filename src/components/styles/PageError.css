@@ -1,0 +1,85 @@
+.pageerror {
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+    position: fixed;
+    background-color: rgb(25, 24, 24);
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    z-index: -2;
+    overflow-x: hidden;
+}
+.pageerror::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: .4;
+    background: url("../../images/home/stars.gif");
+    z-index: -1;
+}
+
+.errortext {
+    width: 70vw;
+    min-width: 800px;
+    height: 70vh;
+    min-height: 600px;
+    border-radius: 50px;
+    /* background-color: rgb(84, 138, 174); */
+    background-image: linear-gradient(to top, #6a85b6 0%, #b1c0d9 100%);
+    color: white;
+    font-size: 1.5rem;
+    line-height: 150%;
+    font-family: "Monaco", "Arial";
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    border-bottom: 5px solid rgb(132, 34, 34);
+    border-right: 5px solid rgb(208, 175, 27);
+    width: 35px;
+    aspect-ratio: 1;
+    transform: rotate(45deg);
+    animation: idle 1s infinite alternate-reverse ease-in-out;
+}
+
+.errorreturn {
+    width: 100px;
+    animation: spin 12s infinite ease-in-out;
+    transition: .5s;
+    cursor: pointer;
+}
+.errorreturn:hover {
+    scale: 1.07;
+    transition: .5s;
+    animation-play-state: paused;
+}
+.errorreturn:active {
+    scale: 0.93;
+    transition: .5s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes idle {
+    from {
+        translate: 0px 5px;
+    }
+    to {
+        translate: 0px -5px;
+    }
+}

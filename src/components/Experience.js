@@ -6,7 +6,6 @@ import Popup from "./Popup";
 import {work, education, skill} from "./data/ExpData.js";
 import rocket from "../images/rocket.png";
 import "./styles/Experience.css";
-import { isVisible } from "@testing-library/user-event/dist/utils/index.js";
 
 function Experience() {
 
@@ -40,6 +39,12 @@ function Experience() {
         }
     };
 
+    function TableCellClick(cell_text, indnt) {
+        set_zoom(true);
+        set_text(cell_text);
+        set_indent(indnt);
+    }
+
     return(
         <motion.div
             initial={{
@@ -70,13 +75,13 @@ function Experience() {
                     {
                         work.map((val, key) => (
                             <tr key={key}>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.year, false)}>
                                     {val.year}
                                 </motion.td>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.place, false)}>
                                     {val.place}
                                 </motion.td>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.description, true)}>
                                     {val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}
                                 </motion.td>
                             </tr>
@@ -95,13 +100,13 @@ function Experience() {
                     {
                         education.map((val, key) => (
                             <tr key={key}>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.year); set_indent(false)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.year, false)}>
                                     {val.year}
                                 </motion.td>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.place); set_indent(false)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.place, false)}>
                                     {val.place}
                                 </motion.td>
-                                <motion.td variants={TableVariant} onClick={() => {set_zoom(true); set_text(val.description); set_indent(true)}}>
+                                <motion.td variants={TableVariant} onClick={() => TableCellClick(val.description, true)}>
                                     {val.description.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}
                                 </motion.td>
                             </tr>
@@ -117,7 +122,7 @@ function Experience() {
                     {skill.map((val, key) => (
                         <motion.div key={key} className="skillbox" variants={SkillVariant}>
                             <img loading="lazy" src={rocket} style={{"height": "100%"}}/>
-                            <div className="skill" onClick={() => {set_zoom(true); set_text(val); set_indent(false)}}>{val}</div>
+                            <div className="skill" onClick={() => TableCellClick(val, false)}>{val}</div>
                         </motion.div>
                     ))}
                 </motion.div>

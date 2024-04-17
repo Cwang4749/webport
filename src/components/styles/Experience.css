@@ -1,5 +1,6 @@
 .experiencepage {
     display: block;
+    position: fixed;
     background-color: rgb(25, 24, 24);
     width: 100vw;
     height: 100vh;

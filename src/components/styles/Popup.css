@@ -8,10 +8,12 @@
     background-color: rgba(0, 0, 0, 0.516);
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: safe center;
+    align-items: safe center;
     z-index: 1;
     cursor: zoom-out;
+    overflow: scroll;
+    overscroll-behavior: contain;
 }
 
 /* Popup is centered, double spaced and indented*/
@@ -21,11 +23,13 @@
     position: relative;
     width: 70%;
     height: 70%;
+    min-width: 500px;
+    min-height: 500px;
     padding-left: 4%;
     padding-right: 4%;
     background-color: rgb(226, 210, 171);
     font-family: "Monaco", "Arial";
-    font-size: clamp(15px, 3vh, 100px);
+    font-size: 1.35rem;
     overflow: scroll;
 
     display: flex;
