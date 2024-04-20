@@ -15,7 +15,10 @@ const FlashcardData = [
         image: [scenery1, scenery2, scenery3]
     },
     {
-        description: ["My brother and I became 1st degree black belts after years of training. Even though I have stopped training, the muscle memory and the life lessons that I learned still persist.", "I learned how to solve the rubik’s cube through YouTube, my best time being 27 seconds. I also learned how to knit and crochet through YouTube. So far, I have knitted scarves for my mom and my little cousin."],
+        description: [
+            "My brother and I became 1st degree black belts after years of training. Even though I have stopped training, the muscle memory and the life lessons that I learned still persist.",
+            "I learned how to solve the rubik's cube through YouTube, my best time being 27 seconds. I also learned how to knit and crochet through YouTube. So far, I have knitted scarves for my mom and my little cousin."
+        ],
         image: [blackbelt, knitting]
     }
 ];

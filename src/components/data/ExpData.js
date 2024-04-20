@@ -7,7 +7,10 @@ const work = [
     {
         year: "2018 - 2019",
         place: "NYU Tandon School of Engineering",
-        description: ["Participated in the NYU Tandon ITEST program and learned how to design, build and code a simple robot. Visited an incubator and learned various entrepreneurial concepts. Presented at two different local competitions between program members, one for coding/engineering competency and the other for entrepreneurial ability.", "Brought back on as an assistant supervisor for the new team of Brooklyn Tech interns. Provided insight and helped maintain the productivity of the team."]
+        description: [
+            "Participated in the NYU Tandon ITEST program and learned how to design, build and code a simple robot. Visited an incubator and learned various entrepreneurial concepts. Presented at two different local competitions between program members, one for coding/engineering competency and the other for entrepreneurial ability.",
+            "Brought back on as an assistant supervisor for the new team of Brooklyn Tech interns. Provided insight and helped maintain the productivity of the team."
+        ]
     }
 ];
 
@@ -20,23 +23,26 @@ const education = [
     {
         year: "2015 - 2019",
         place: "Brooklyn Technical High School",
-        description: ["Mechatronics Major: Built projects using Arduinos, RobotC, Autodesk Inventor, 3D printers, CNC machines, etc. Worked with LabVIEW and myRIO to build simple representations of logic. Final project involved a raspberry pi, facial tracking with OpenCV, 3D printing and plasma cutting.", "Weston Research Scholar: Conducted experiments with peers under the supervision of a research mentor to design a clean energy harvester that can also be mass produced. Presented a proof of concept at the 2018 New York City Science and Engineering Fair and reached the finals for the Engineering category."]
+        description: [
+            "Mechatronics Major: Built projects using Arduinos, RobotC, Autodesk Inventor, 3D printers, CNC machines, etc. Worked with LabVIEW and myRIO to build simple representations of logic. Final project involved a raspberry pi, facial tracking with OpenCV, 3D printing and plasma cutting.",
+            "Weston Research Scholar: Conducted experiments with peers under the supervision of a research mentor to design a clean energy harvester that can also be mass produced. Presented a proof of concept at the 2018 New York City Science and Engineering Fair and reached the finals for the Engineering category."
+        ]
     }
 ];
 
 const skill = [
-    "Ardunio C",
-    "C++",
-    "SQL",
-    "Swift",
-    "Flutter / Dart",
-    "React / JSX / JS / HTML / CSS",
     "Teamwork",
+    "Patience",
     "Flexibility",
     "Adaptability",
     "Communication",
-    "Patience",
-    "Time Management"
+    "Time Management",
+    "C++",
+    "SQL",
+    "Swift",
+    "Ardunio C",
+    "Flutter / Dart",
+    "React / JSX / JS / HTML / CSS"
 ];
 
 export {work, education, skill}

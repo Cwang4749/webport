@@ -7,7 +7,7 @@ import Alert from "./Alert";
 import cardbackground from "../images/contact/cardbg.webp";
 import cardprofile from "../images/contact/cardprofile.webp";
 import linkedinlogo from "../images/contact/linkedinlogo.png";
-import githublogo from "../images/contact/githublogo.png";
+import githublogo from "../images/contact/githublogo.webp";
 import gmaillogo from "../images/contact/gmaillogo.png";
 import outlooklogo from "../images/contact/outlooklogo.png";
 import "./styles/Contact.css";

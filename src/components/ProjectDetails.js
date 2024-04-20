@@ -11,6 +11,7 @@ function ProjectDetails() {
     const [proj_name, set_proj_name] = useState("");
     const [proj_text, set_proj_text] = useState(null);
     const [proj_imgs, set_proj_imgs] = useState(null);
+    const [proj_img_types, set_proj_img_types] = useState(null);
     const [links, set_links] = useState(null);
     const [link_labels, set_labels] = useState(null);
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ function ProjectDetails() {
                 set_proj_name(PortData[i].projectName);
                 set_proj_text(PortData[i].text);
                 set_proj_imgs(PortData[i].images);
+                set_proj_img_types(PortData[i].imageType);
                 set_links(PortData[i].links);
                 set_labels(PortData[i].linklabels);
                 stay = true;
@@ -75,9 +77,28 @@ function ProjectDetails() {
                             key={pIndex} className="projectsection"
                         >
                             <div className="projecttext">{parapraph}<br/></div>
-                            <motion.img
+                            {/* <motion.object
                                 variants={ProjSecVariant} initial="initial" whileInView="animate" viewport={{once: true}}
-                                src={proj_imgs[pIndex]} className="projectimages"/>
+                                loading="lazy" data={proj_imgs[pIndex]} className="projectimages"
+                                style={proj_img_types[pIndex] ? {'aspectRatio': '16/9'} : {}}
+                            /> */}
+
+                            {proj_img_types[pIndex] ? 
+                                (
+                                    <motion.video
+                                        variants={ProjSecVariant} initial="initial" whileInView="animate" viewport={{once: true}}
+                                        loading="lazy" src={proj_imgs[pIndex]} className="projectimages"
+                                        autoPlay loop muted
+                                    />
+                                ) : 
+                                (
+                                    <motion.img
+                                        variants={ProjSecVariant} initial="initial" whileInView="animate" viewport={{once: true}}
+                                        loading="lazy" src={proj_imgs[pIndex]} className="projectimages"
+                                    />
+                                )
+
+                            }
                         </motion.div>
                     )
                 })}
