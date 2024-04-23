@@ -18,7 +18,16 @@ const education = [
     {
         year: "2019 - 2022",
         place: "Hunter College",
-        description: ["BA in Computer Science, Summa Cum Laude. Worked with Python, C++, React Framework, Flutter Framework, mySQL Database, etc. In addition to the normal curriculum, I also completed 2 Codepath courses: iOS App Development and Cybersecurity."]
+        description: ["BA in Computer Science, Minor in Mathematics, Summa Cum Laude. Worked with C++, Python, React Framework, Flutter Framework, mySQL Database, etc. Familiar with app and web development."]
+    },
+    {
+        year: "Spring 2021 - Fall 2021",
+        place: "Hunter College (Remote)",
+        description: [
+            "In addition to the normal curriculum at Hunter College, I also completed 2 Codepath courses: iOS App Development and Cybersecurity.",
+            "In the iOS course, I worked with Swift and Xcode to build multiple projects that expanded upon fundamental app development concepts.",
+            "In the cybersecurity course, I learned hands on with weekly CTF assignments that illustrated different risks such as CRSF, XSS, etc."
+        ]
     },
     {
         year: "2015 - 2019",
