@@ -59,6 +59,7 @@ function AboutMe() {
                 flashCardImage={FlashcardData[curr_circle].image}
                 imageIndex={flashcard_image_index}
                 setImageIndex={set_flashcard_image_index}
+                imageType={FlashcardData[curr_circle].imageType}
             />
 
             <div ref={scope} className="am_circlecontainer">

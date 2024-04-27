@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import Navbar from "./Navbar";
 import  PortData from "./data/PortfolioData.js";
+import fireworks from "../images/portfolio/fireworks.mp4";
 import "./styles/Portfolio.css"
 
 function Portfolio() {
@@ -46,6 +47,11 @@ function Portfolio() {
             className="PortfolioPage"
         >
             <Navbar second_btn={0} third_btn={2} fourth_btn={3} />
+
+            <video
+                loading="lazy" src={fireworks} className="fireworks"
+                autoPlay loop muted
+            />
 
             <motion.div variants={ProjVariant} initial="initial" animate="animate" style={{width: "90%"}}>
             {PortData.map((project, index) => {

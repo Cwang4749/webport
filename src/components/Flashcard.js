@@ -17,7 +17,7 @@ function Flashcard(props) {
         }, 200);
         
         animate([
-            [scope.current, {rotateX: 360, PointerEvent: "none"}, {duration: .1}],
+            [scope.current, {rotateX: 360}, {duration: .1}],
             [scope.current, {rotateX: 0}, {duration: .1}],
         ]);
     }
@@ -28,9 +28,16 @@ function Flashcard(props) {
             className="flashcard" onClick={FlipFlashcard}
         >
             <div className="flashcardtext">
-                {props.imageIndex == -1 ? <div>{props.flashCardText.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</div> : ""}
+            {props.imageIndex == -1 && 
+                <div>{props.flashCardText.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</div>
+            }
+            {props.imageIndex != -1 && !props.imageType[props.imageIndex] &&
+                <img loading="lazy" className="flashcardimg" src={props.flashCardImage[props.imageIndex]} alt="loading..." />
+            }
+            {props.imageIndex != -1 && props.imageType[props.imageIndex] &&
+                <video loading="lazy" src={props.flashCardImage[props.imageIndex]} className="flashcardimg" autoPlay loop muted/>
+            }
             </div>
-            {props.imageIndex != -1 ? <img loading="lazy" className="flashcardimg" src={props.flashCardImage[props.imageIndex]} alt="loading..." /> : ""}
         </motion.div>
     );
 }
