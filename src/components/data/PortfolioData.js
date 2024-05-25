@@ -52,6 +52,49 @@ import chapfirestore from "../../images/portfolio/chapk/firestore.mp4";
 import chapfuture from "../../images/portfolio/chapk/future.jpg";
 import chaptranslate from "../../images/portfolio/chapk/translate.mp4";
 
+// RECIPE API
+import recpreview from "../../images/portfolio/recipe/preview.jpeg";
+import recdata from "../../images/portfolio/recipe/data.jpg";
+import recmake from "../../images/portfolio/recipe/makedata.jpg";
+import rectemplate from "../../images/portfolio/recipe/template.jpg";
+import recmvc from "../../images/portfolio/recipe/mvc.jpg";
+import recendpoints from "../../images/portfolio/recipe/endpoints.jpg";
+import recpostman from "../../images/portfolio/recipe/postman.jpg";
+
+// VR MAZE
+import vrpreview from "../../images/portfolio/vr/preview.jpeg";
+import vrtemplate from "../../images/portfolio/vr/template.jpg";
+import vrlayout from "../../images/portfolio/vr/layout.jpg";
+import vrbutton from "../../images/portfolio/vr/button.jpg";
+import vropen from "../../images/portfolio/vr/opendoor.jpg";
+import vrrespawn from "../../images/portfolio/vr/respawn.jpg";
+import vrparticle from "../../images/portfolio/vr/particle.jpg";
+import vrslider from "../../images/portfolio/vr/slider.jpg";
+import vrinventory from "../../images/portfolio/vr/inventory.jpg";
+
+// FREE
+import freepreview from "../../images/portfolio/free/preview.png";
+import freeentry from "../../images/portfolio/free/cmake.jpg";
+import freecmake from "../../images/portfolio/free/entry.jpg";
+import freeglad from "../../images/portfolio/free/glad.jpg";
+import freeabstract from "../../images/portfolio/free/abstract.jpg";
+import freelayout from "../../images/portfolio/free/layout.webp";
+import freeentity from "../../images/portfolio/free/entity.jpg";
+import freeonupdate from "../../images/portfolio/free/onupdate.jpg";
+
+// ROBOSIST
+import robopreview from "../../images/portfolio/robosist/preview.jpeg";
+import robochassis from "../../images/portfolio/robosist/chassis.jpeg";
+import robomotor from "../../images/portfolio/robosist/motordriver.jpeg";
+import robomotion from "../../images/portfolio/robosist/motion.mp4";
+import robocode from "../../images/portfolio/robosist/code.jpg";
+import roboinitial from "../../images/portfolio/robosist/initialstage.mp4";
+import roboparts from "../../images/portfolio/robosist/parts.jpg";
+import robosuccess from "../../images/portfolio/robosist/success.mp4";
+import robomakeshift from "../../images/portfolio/robosist/makeshift.jpg";
+import roboprogress from "../../images/portfolio/robosist/progress.jpg";
+import robomeasure from "../../images/portfolio/robosist/measure.mp4";
+
 const PortfolioData = [
     {
         projectName : "Personal Web App",
@@ -177,24 +220,111 @@ const PortfolioData = [
         linklabels : ["Figma", "GitHub", "Chap-K"]
     },
     {
-        projectName : "Ex 5",
-        preview : webpreview,
-        description : "example",
-        text : ["something"],
-        images : [webpreview],
-        imageType : [0],
-        links : [""],
-        linklabels : [""]
+        projectName : "Recipe API",
+        preview : recpreview,
+        description : "A proof of concept for a recipe database and API, hosted by MySQL and tested with Postman. The API itself was built using .NET's Entity Framework Core Fluent API, while the example data was created using MySQL commands.",
+        text : [
+            "While working on my Capstone project: Diet Unquiet, I was assigned a final project in my API class. I decided to create an API centered around recipes since it was very relevant to the project I was already working on. The first step was to plan out how the data would be stored and how it would relate to each other. Eventually, I decided on a one-to-one relationship between two tables: Recipe Table and Nutrition Table, in which the Recipe Table would store information such as the name and instructions, while the Nutrition Table would store nutritional facts about the recipe.",
+            "Next, I created the structure of the database in MySQL Workbench using MySQL commands. I also used the commands to add some examples into the database, so that I could later test the API endpoints.",
+            "The API was created in Visual Studio (the IDE), and not in Visual Studio Code (the code editor). Visual Studio works really well with the Entity Framework and offers many integrated supports for building APIs, one of which is a template for a C# API project. The project follows a Model-View-Controller (MVC) design.",
+            "The template automatically creates a weather forecast API. After removing the parts of the code related to the weather forecast API, I created a folder called Models. In the new folder, I added 2 classes, one for each table: Recipe.cs and Nutrition.cs. Then I also added another class: RecipeAPIDBContext.cs, that creates database contexts for both of these models. Lastly, I created controllers for each model: RecipeController.cs and NutritionController.cs. These controllers handle the user interactions and provide the responses for each API endpoint.",
+            "These are the available API endpoints:",
+            "Each of the various API endpoints were tested with the help of Postman. In addition to successes, failures were also tested. When a GET/POST/DELETE is used with an nonexistent table/recipeID/nutritionID, the API should return a 404 status code as well as a brief description of what went wrong.",
+            "As a reminder, this project is a proof of concept and only creates the database as well as the API endpoints; it does not have a fully developed front end for displaying the information as well as for handling user interaction. I included a link for my presentation on the project. I also linked the MySQL commands I used in order to create the database. For more information, please refer to the Github repository for this project."
+        ],
+        images : [
+            recdata, recmake, rectemplate, recmvc, recendpoints, recpostman, null
+        ],
+        imageType : [0, 0, 0, 0, 0, 0, 0],
+        links : [
+            "https://github.com/Cwang4749/RecipeAPI",
+            "https://docs.google.com/presentation/d/1_bkWA6LQYltYocb98RAEbQukc84RAeRhPxXiBjT90LM/edit?usp=sharing",
+            "https://docs.google.com/document/d/1SmiWspzi0FagRVJFhtC7ib1U_byDnJTAJjHL58m6XYA/edit?usp=sharing"
+        ],
+        linklabels : ["GitHub", "Final Ppt", "MySQL Commands"]
     },
     {
-        projectName : "Ex 6",
-        preview : webpreview,
-        description : "example",
-        text : ["something"],
-        images : [webpreview],
-        imageType : [0],
-        links : [""],
-        linklabels : [""]
+        projectName : "VR Maze",
+        preview : vrpreview,
+        description : "A VR maze game built in Unity 3D, with interactions such as: buttons, sliders, a 2D interface for inventory, etc. There are 4 scenes/maps, one for each team member, featuring its own theme, traps, enemies, etc.",
+        text : [
+            "VR-Maze, is as its name suggests, a virtual reality game in which the player has to find the exit to a maze. My teammates and I each worked on our own individual maps, and later combined them into one. In the process, we would share any information about functionalities that we successfully implemented, such as enemy animation, particle systems, etc. We decided to use Unity 3D because of the wide availability of learning resources online, as well as because it offers a template for VR development.",
+            "The first step was to create the maze using blocks. As advised by another teammate Kenthony, we used a 2D maze generator for inspiration on where to place the walls. Afterwards, we decided on the themes we wanted to apply; mine being fire themed. The theme is more than just a visual aspect, it also determines the types of enemies and the types of traps found in each scene. Using this theme as well as the initial maze I built, I quickly designed a layout for the types of functionality I wanted in my scene. Although I eventually replaced the rolling fire boulder idea with the dragon, the layout served me well throughout the entire process.",
+            "Following the layout I created, I worked on each functionality separately, starting with the blue doors that open when the player presses the corresponding buttons. In order to achieve this effect, I created a button object that is composed of a base and a movable clicker with the configurable joint property that is locked into movements in its relative Y-axis. Then I attached a script to this clicker that tracks its movements and changes a variable accordingly. By using invoke, I can call a different script attached to another object, in this case the script that opens the door.",
+            "Since I have multiple moving doors, rather than hard code every single door and its animation, I used a variable in the script to track the current door and whether it is in the open/closed position. The current door is set by dragging the door object from the hierarchy into the door variable in the inspector. As a result, I was able to easily duplicate doors and buttons without additional coding.",
+            "The next functionality I worked on was the respawn. With some help from Brajan, I was able to implement a sort of respawning mechanic for when the player gets hit with a trap. The implementation involves creating an empty transform object placed at the start of the maze. By using this transform object as a point of reference, I can change the location of the player, or in other words: respawn them, whenever they get hit by a trap.",
+            "As part of another assignment, I had to research particle systems in Unity 3D and the different ways to utilize/customize them. Using what I learned, I integrated particle systems into most of my traps. I customized each particle system by changing the duration, initial velocity, velocity over lifetime, initial size, size over lifetime, initial rotation, rotation over lifetime, volume, direction, etc. Attached to each particle system is the script for respawning the player. It utilizes a function provided by Unity to track particle collisions, and the tag attached to the player called Player.",
+            "In addition to pushing buttons, I wanted to include a handle that the player could grab and pull. Ultimately, I decided to integrate it with the lava rain from my layout. By using the Unity provided XR Grab Interactable, I was able to easily make a grabbable component. Similar to the button, the handle is composed of two components, a base and a slider that uses the configurable joint. I added a ceiling with a script that tracks the handle’s position, and moves according to how the handle moves.",
+            "For the last major implementation, I added a key that can be placed into a 2D inventory (so the player doesn’t have to hold it the entire time). Similar to the handle, the key also has an XR Grab Interactable so that the player can grab it using the vr controllers. In order to create the 2D interface for the inventory, I added a canvas that is always tracked to the player’s camera. In the canvas, I added 2 different components with button properties: one for the toggle, and the other for the inventory itself. Although these are not physical buttons that the player presses, they can use the triggers on the controllers to raycast and click the buttons on the canvas. Using 2 scripts with relatively simple logic, I first made the toggle button render/hide the inventory, and then I made the inventory spawn/store the key. The spawn functionality is achieved by tracking the player’s location and spawning the key in front of them.",
+            "Although I didn’t go into the specifics of how I created every trap (Dragon breath, Arrows, Explosion, Fake Floor, and the Lava rain) nor the puzzles (rotating doors, trip wires, etc), they all utilize the same underlying functionalities that I described: button presses, respawning, particle systems, etc. In addition, I only described the parts I worked on which ultimately does not reflect the whole project. Each of my team members added their own features, traps and enemies. Please check out the demo video and the Github to fully discover all that this project has to offer."
+        ],
+        images : [
+            vrtemplate, vrlayout, vrbutton, vropen, vrrespawn, vrparticle, vrslider, vrinventory, null
+        ],
+        imageType : [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        links : [
+            "https://github.com/KenthonyGarcia/VR-Maze",
+            "https://youtu.be/aEnxZzfUeLU",
+            "https://drive.google.com/file/d/1q_XztcvY8kyFFUxHfViEz4jZF-jMd_MD/view?usp=sharing",
+            "https://drive.google.com/drive/folders/1VliyUaJ1N8oIwfuxayb2OJdzKU9ZJSYV?usp=sharing"],
+        linklabels : ["GitHub", "Demo", "Final Paper", "Progress"]
+    },
+    {
+        projectName : "Free",
+        preview : freepreview,
+        description : "A simple 2D maze game created using a custom built C++ based game engine. It uses GLFW to render the graphics and the engine abstracts most processes.",
+        text : [
+            "The whole project is built in Visual Studio (IDE, not Visual Studio Code). Following the instructions of my professor, I created a bare bones game engine from scratch and named it Yam. For the entry point (main.cpp) to my game, I used a macro (YAM_INITIATE) defined in my game engine to start the game.",
+            "I updated all of the CMakeLists as I progressed, so that the project could be easily exported and built. In order for the project to be properly built, I made a CMakeLists.txt for each aspect: the whole project, the game, the game engine, etc. In order to make CMake build the other CMakeLists.txt, I included an: add_subdirectory(*NAME OF FOLDER*) for each aspect.",
+            "For rendering the game, I used GLFW, an Open Source, multi-platform lightweight library that works with OpenGL. In order to use it, I first added the repository as a submodule. To use OpenGL, I used an online tool: https://glad.dav1d.de/, to generate a compatible version of the library.",
+            "I made an abstract class: Window, that is inherited by my own GlfwWin class. This GlfwWin class uses the GLFW library to create a pointer to a GLFWwindow object that is able to use GLFW functions. Then, the GmWin class creates a pointer (called mWindow) to a GlfwWin object. The GmWin class is now able to access all of the GLFW functions through the pointer. All of this is done in order to add layers of abstraction that prevents users of the game engine from directly manipulating the core functionality: GLFW and GlfwWin. Within the game engine Yam, the window is created using the GmWin class. This abstraction process was replicated for the Shader, Sprite, and Renderer classes which use functions from OpenGL.",
+            "After the game engine was completed, I began planning the type of game I wanted to create with it. I settled on a simple 2D maze (this game was the inspiration for the VR maze game). I used my notebook to sketch out the layout for the maze as well as plan out potential functionality. Since I set the default game window to 800 x 600 pixels, I included dimensions in my sketch to make sure the proportions of the walls were relative to the player’s character.",
+            "In order to draw the different parts of the game (background, walls, traps and the player’s character), I first created an Entity class. This class tracks the entity’s position, dimensions, and the active sprite within an array of Sprites (from the Yam engine). It is also able to change the position and the active sprite. Lastly, the class draws in the window by using the Yam engine’s renderer.",
+            "For the game itself, I created a class called Free (also the name of the game) which inherits from the YamApp class. The YamApp class automatically creates the 800x600 game window and handles keyboard input from the user. The Free class overrides the virtual function: OnUpdate, which is called every frame. The OnUpdate function draws the map (changes stages if the player passes stage 1 or 2), draws the player’s character (new position + new sprite when changed), and checks if the player has collided with any walls (will reset the player to the start of the map if collided).",
+            "Although I did not go through everything, I covered most of the fundamental aspects. Within the list of links, I included a link to the GLFW Github repository, as well as a link to the Glad tool (for OpenGL). Please check out the Github repository to see the full project, including a list of interactions and a demo."
+        ],
+        images : [
+            freeentry, freecmake, freeglad, freeabstract, freelayout, freeentity, freeonupdate, null
+        ],
+        imageType : [0, 0, 0, 0, 0, 0, 0, 0],
+        links : [
+            "https://github.com/Cwang4749/Simple_Maze",
+            "https://raw.githubusercontent.com/Cwang4749/Simple_Maze/master/Free_Demo.gif",
+            "https://github.com/glfw/glfw/tree/955fbd9d265fa95adf9cb94896eb9a516aa50420",
+            "https://glad.dav1d.de/"
+        ],
+        linklabels : ["GitHub", "Demo", "GLFW", "GLAD"]
+    },
+    {
+        projectName : "Robosist",
+        preview : robopreview,
+        description : "A robot assistant that performs simple tasks such as retrieving/shaking/pouring samples, line following, etc. Coded with Arduino C and built with motors/wheels/Arduino board/motor drivers, 3D printed shell, etc.",
+        text : [
+            "Robosist started as a normal line following robot with simple cup delivering/retrieving functionality. My original team of 4 members and 2 supervisors started by building a chassis with the parts that NYU provided.",
+            "Before we completed the chassis, we tested everything with breadboards first. The motors, motor drivers, IR sensors, and Arduino board were all tested separately with breadboards before placing them onto the chassis.",
+            "After everything was assembled, we began testing hardcoded motions such as: drive forward for 2 seconds. By utilizing pulse-width modulation (PWM), we were able to adjust the speed of the robot, as well as make turns. However, we eventually realized that rotating the wheels in opposite directions was more optimal for turning.",
+            "Since the way we control the motors involves writing to a specific pin on the Arduino board, we used variable names to distinguish between which pins controlled which part of the robot.",
+            "Since the robot will deliver/retrieve cups by following black tape on the floor, we coded a line following program by making use of the two IR sensors located at the front of the robot. Our initial success with the line following program revealed a couple flaws with our setup.",
+            "In order to code efficiently, we split the project into different parts and had everyone work on a different functionality. Afterwards, we would combine the codes for each functionality into a single file. Rather than download and upload .ino files (Arduino files), we copied the code into google docs. This was much faster, and also allowed for us to work together for specific functionalities.",
+            "After multiple iterations of our robot and code, we finally saw success. The biggest change to the chassis was that another IR sensor was added in between the original 2. This drastically improved the accuracy (followed the line better) and precision (made mistakes less often) of the robot. In preparation for the mini competition, we added a remote control and an IR receiver. This way, we could use the remote to control the robot to perform different functions (deliver vs retrieve from different locations) without having to run the code from the Arduino IDE in between tasks.",
+            "After the Summer internship ended, part 2 of the program began. We were tasked with bringing our newfound knowledge of Arduino and robot building back to our schools. Our task was to bring on more members for a final competition in which we build a robot following a theme and we try to pitch it as a business idea. My original team of 4 became a group of 9, and following the recommendation of our mentor, we went with a robot assistant. For our demonstration, we first made a makeshift sample dispenser by cutting a hole in a CD holder. One of our members 3D printed the logo for our robot, the shell to cover the wiring, and the example samples for the robot to grab.",
+            "Building upon what we succeeded in doing over the Summer, we built another line following robot. This time, we adjusted the code for controlling the motor on the claw so that it would grab/release the samples instead of cups. In addition, when the robot grabs the sample, it first backs up for a second before turning so that it wouldn’t get stuck in the sample dispenser.",
+            "In addition to the line following, we added other simple functionalities such as: shaking a bottle with its claw, pouring a sample, and measuring water levels. For the pouring, we added a servo motor with a cup, to the back of the robot. In order to measure water levels, we attached the sensor to a string in a pulley system.",
+            "Please refer to the links provided, especially the demo, for more information about the project. It was difficult to distinguish who did what since it was a collaborative effort the majority of the time. Robosist is the result of hundreds of hours of debugging, redesigning, and rebuilding with my fellow team members; either during the Summer program at NYU, or afterschool at Brooklyn Tech."
+        ],
+        images : [
+            robochassis, robomotor, robomotion, robocode, roboinitial, roboparts,
+            robosuccess, robomakeshift, roboprogress, robomeasure, null
+        ],
+        imageType : [0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+        links : [
+            "https://drive.google.com/file/d/12Hni8GVGvoCMlNRID0GYGIdGlnD9G_Y2/view?usp=sharing",
+            "https://drive.google.com/file/d/1_3pU69ze0XMlVIEiIpD_wVdADKnaTQ7y/view?usp=sharing",
+            "https://drive.google.com/drive/folders/1s6QU05nWqmHzYWzHXsFW6TtBGZKtYrln?usp=sharing",
+            "https://docs.google.com/document/d/1F1l7jPU_zXz7t_wXpVuw5qsDEe9NhRB-KyC9ixm-2ZU/edit?usp=sharing",
+            "https://drive.google.com/file/d/13QvTp6vuNSJz3JhzkxSiYCgDnbwpVY08/view?usp=sharing"
+        ],
+        linklabels : ["Demo", "Demo 2", "Archive", "Code", "Rubric"]
     }
 ];
 

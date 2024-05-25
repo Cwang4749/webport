@@ -32,18 +32,18 @@ function Navbar(props) {
         <div className="Navbar">
             {/* The first button is always the home button */}
             <Link to="/">
-                <img className="button" loading="lazy" src={homeicon}/>
+                <img className="button" loading="lazy" src={homeicon} alt=""/>
             </Link>
 
             {/* Using the parameters passed by page the user is currently on, render the correct buttons by referencing the array */}
             <Link to={linkArray[props.second_btn].link}>
-                <img className="button" loading="lazy" src={linkArray[props.second_btn].image}/>
+                <img className="button" loading="lazy" src={linkArray[props.second_btn].image} alt=""/>
             </Link>
             <Link to={linkArray[props.third_btn].link}>
-                <img className="button" loading="lazy" src={linkArray[props.third_btn].image}/>
+                <img className="button" loading="lazy" src={linkArray[props.third_btn].image} alt=""/>
             </Link>
             <Link to={linkArray[props.fourth_btn].link}>
-                <img className="button" loading="lazy" src={linkArray[props.fourth_btn].image}/>
+                <img className="button" loading="lazy" src={linkArray[props.fourth_btn].image} alt=""/>
             </Link>
         </div>
     );

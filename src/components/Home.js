@@ -28,7 +28,7 @@ function Home() {
         >
             {/* Draggable background, with the boundaries set to the div */}
             <div ref={pano1ref} className="panobox">
-                <motion.img className="pano1" loading="lazy" src={pano1} drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
+                <motion.img className="pano1" loading="lazy" src={pano1} alt="" drag="x" dragConstraints={pano1ref} dragElastic={0.1}/>
             </div>
 
             <div className="hello">
@@ -99,7 +99,7 @@ function Home() {
                 animate={{ scale: 1 }}
                 transition={{ duration: .2}}
             >
-                <img className="asterisk" loading="lazy" src={asterisk} />
+                <img className="asterisk" loading="lazy" src={asterisk} alt=""/>
             </motion.div>
 
         </motion.div>

@@ -63,13 +63,13 @@ function HelpModal() {
                 set_section(3);
                 break;
         }
-    },[help_modal]);
+    },[help_modal, loc.pathname]);
 
     return(
         <div>
             
             <motion.div className="helpbutton" ref={scope} onHoverStart={() => HoverHelp()} onClick={() => set_help_modal(true)}>
-                <img loading="lazy" src={questionmark} style={{"height": "80%"}} />
+                <img loading="lazy" src={questionmark} alt="" style={{"height": "80%"}} />
             </motion.div>
  
             <AnimatePresence mode="wait" initial={false}>
@@ -83,7 +83,7 @@ function HelpModal() {
                             {HelpData.map((section, sectionindex) => {
                                 return(
                                     <div key={sectionindex} className="helpnavsection"
-                                        id={curr_section == sectionindex && "currnavsection"}
+                                        id={curr_section === sectionindex && "currnavsection"}
                                         onClick={() => SetSection(sectionindex)}
                                     >
                                         {section.section}
@@ -104,7 +104,7 @@ function HelpModal() {
                                     >
                                         {feature}
                                         <br/><br/>
-                                        <img src={HelpData[curr_section].images[ftindex]} style={{"width": "90%", "borderRadius": "5px"}}/>
+                                        <img src={HelpData[curr_section].images[ftindex]} alt="" style={{"width": "90%", "borderRadius": "5px"}}/>
                                     </motion.div>
                                 )
                             })}
@@ -113,7 +113,7 @@ function HelpModal() {
                         <motion.img 
                             initial={{x: 60, rotate: 90}} animate={{x: 0, rotate: 0}} transition={{duration: .8}}
                             whileHover={{opacity: 1, transition: {duration: 0.5}}}
-                            src={esc} onClick={() => set_help_modal(false)} className="escapebutton"
+                            src={esc} alt="" onClick={() => set_help_modal(false)} className="escapebutton"
                         />
                     </motion.div>
                 }

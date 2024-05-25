@@ -23,7 +23,7 @@ function PageError() {
                 <div className="arrow"/>
                 <br/>
                 <Link to="/">
-                    <img className="errorreturn" src={cube}/>
+                    <img className="errorreturn" src={cube} alt=""/>
                 </Link>
             </div>
         </motion.div>

@@ -80,7 +80,7 @@ function Contact() {
                 // style={full_screen ? {'width': '100vw', 'height': '100vh'} : {}}
             >
                     <motion.img drag="x" dragConstraints={bgRef} dragElastic={0.05}
-                        id="contactcardbg" loading="lazy" src={cardbackground}
+                        id="contactcardbg" loading="lazy" src={cardbackground} alt=""
                         onDoubleClick={() => DoubleClickBG()}/>
                 
                 <motion.div variants={CardLinkVariant} initial="initial" animate="animate">
@@ -90,26 +90,26 @@ function Contact() {
                     >
                         <a href="https://linkedin.com/in/calvin-wang-b107a71b9" target="_blank" rel="noreferrer">
                             <div className="cl_center">
-                                <img className="logo" loading="lazy" src={linkedinlogo}/> https://linkedin.com/in/calvin-wang-b107a71b9
+                                <img className="logo" loading="lazy" src={linkedinlogo} alt=""/> https://linkedin.com/in/calvin-wang-b107a71b9
                         </div></a>
                     </motion.div>
 
                     <motion.div variants={CardLinkVariant} className="cardlink" id="githubpos">
                         <a href="https://github.com/Cwang4749" target="_blank" rel="noreferrer">
                             <div className="cl_center">
-                                <img className="logo" loading="lazy" src={githublogo}/>https://github.com/Cwang4749
+                                <img className="logo" loading="lazy" src={githublogo} alt=""/>https://github.com/Cwang4749
                         </div></a>
                     </motion.div>
 
                     <motion.div variants={CardLinkVariant} className="cardlink" id="gmailpos">
                         <div className="cl_center" onClick={() => CopyText("calvinwang1002@gmail.com")}>
-                            <img className="logo" loading="lazy" src={gmaillogo}/>calvinwang1002@gmail.com
+                            <img className="logo" loading="lazy" src={gmaillogo} alt=""/>calvinwang1002@gmail.com
                         </div>
                     </motion.div>
                         
                     <motion.div variants={CardLinkVariant} className="cardlink" id="outlookpos">
                         <div className="cl_center" onClick={() => CopyText("calvin.wang161@myhunter.cuny.edu")}>
-                            <img className="logo" loading="lazy" src={outlooklogo}/>calvin.wang161@hunter.cuny.edu
+                            <img className="logo" loading="lazy" src={outlooklogo} alt=""/>calvin.wang161@hunter.cuny.edu
                         </div>
                     </motion.div>
                 </motion.div>
@@ -117,7 +117,7 @@ function Contact() {
                 <motion.img
                     initial={{scale: .8}} animate={{scale: 1}} transition={{duration: .6}}
                     whileHover={{scale: 1.1, transition: {duration: 1, repeat: Infinity, repeatType: "reverse", ease: easeInOut}}}
-                    loading="lazy" id="cardprofile" src={cardprofile}/>
+                    loading="lazy" id="cardprofile" src={cardprofile} alt=""/>
             </motion.div>
             <Navbar second_btn={0} third_btn={1} fourth_btn={3} />
 

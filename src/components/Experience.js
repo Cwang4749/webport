@@ -121,7 +121,7 @@ function Experience() {
                 >
                     {skill.map((val, key) => (
                         <motion.div key={key} className="skillbox" variants={SkillVariant}>
-                            <img loading="lazy" src={rocket} style={{"height": "100%"}}/>
+                            <img loading="lazy" src={rocket} alt="" style={{"height": "100%"}}/>
                             <div className="skill" onClick={() => TableCellClick(val, false)}>{val}</div>
                         </motion.div>
                     ))}

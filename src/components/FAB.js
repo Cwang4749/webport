@@ -25,7 +25,7 @@ function FAB(props) {
                 <div> 
                     <div className="fablinks"><Link to="/Portfolio">Portfolio</Link></div>
                     {props.links == null ? "" : props.links.map((link, indx) => <div key={indx} className="fablinks"><a href={link} target="_blank" rel="noreferrer">{props.labels[indx]}</a></div>)}
-                </div> : <img className="fabarrow" loading="lazy" src={fabarrow}/>}
+                </div> : <img className="fabarrow" loading="lazy" src={fabarrow} alt=""/>}
             </div>
 
             <div onClick={() => set_fab_expand(false)} style={fab_expand ? {'width': '100vw', 'height': '100vh', 'zIndex': '1', 'position': 'fixed', 'opacity': '0', 'top': '0', 'left': '0'} : {'visibility': 'hidden'}} />

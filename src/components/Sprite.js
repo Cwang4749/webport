@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import { motion, useAnimate } from "framer-motion";
 import sprite from "../images/aboutme/sprite.webp";
 import heart from "../images/aboutme/heart.png";
@@ -23,7 +23,7 @@ function Sprite() {
     ]
 
     const changeSprite = () => {
-        if(curr_sprite == sprites.length - 1)
+        if(curr_sprite === sprites.length - 1)
         {
             set_sprite(0);
         }
@@ -43,40 +43,42 @@ function Sprite() {
         "outline": "none"
     }
 
-    const moveSprite = e =>  {
+    const moveSprite = useCallback(e =>  {
         switch (e.key) {
             case 'ArrowLeft':
                 if(left_pos > 0) {
-                    set_left_pos(left_pos -= 2);
+                    set_left_pos(left_pos => (left_pos -= 2));
                 }
-                set_rotate_pos(rotate_pos -= 15);
+                set_rotate_pos(rotate_pos => (rotate_pos -= 15));
                 break;
             case 'ArrowRight':
                 if(left_pos < 92) {
-                    set_left_pos(left_pos += 2);
+                    set_left_pos(left_pos => (left_pos += 2));
                 }
-                set_rotate_pos(rotate_pos += 15);
+                set_rotate_pos(rotate_pos => (rotate_pos += 15));
                 break;
             case 'ArrowUp':
                 if(top_pos > 0) {
-                    set_top_pos(top_pos -= 2);
+                    set_top_pos(top_pos => (top_pos -= 2));
                 }
-                set_rotate_pos(rotate_pos -= 15);
+                set_rotate_pos(rotate_pos => (rotate_pos -= 15));
                 break;
             case 'ArrowDown':
                 if(top_pos < 86) {
-                    set_top_pos(top_pos += 2);
+                    set_top_pos(top_pos => (top_pos += 2));
                 }
-                set_rotate_pos(rotate_pos += 15);
+                set_rotate_pos(rotate_pos => (rotate_pos += 15));
+                break;
+            default:
                 break;
         }
         if(e.key !== 'r')
         {
             animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
         }
-    };
+    }, [top_pos, left_pos, rotate_pos, animatesprite, spriteref]);
 
-    const resetSprite = e => {
+    const resetSprite = useCallback(e => {
         if(e.key === 'r') {
             set_left_pos(0);
             set_top_pos(0);
@@ -85,7 +87,7 @@ function Sprite() {
                 animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: 1}]]);
             }, 10);
         }
-    }
+    }, [top_pos, left_pos, rotate_pos, animatesprite, spriteref]);
 
     useEffect(() => {
         document.addEventListener('keydown', moveSprite);
@@ -95,7 +97,7 @@ function Sprite() {
             document.removeEventListener('keydown', moveSprite);
             document.removeEventListener('keyup', resetSprite);
         };
-    }, [top_pos, left_pos]);
+    }, [top_pos, left_pos, rotate_pos, spriteref, animatesprite, moveSprite, resetSprite]);
 
     return(
         <motion.img 

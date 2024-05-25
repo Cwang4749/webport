@@ -63,9 +63,9 @@ function AboutMe() {
             />
 
             <div ref={scope} className="am_circlecontainer">
-                <div className={curr_circle==0 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(0)}/>
-                <div className={curr_circle==1 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(1)}/>
-                <div className={curr_circle==2 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(2)}/>
+                <div className={curr_circle===0 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(0)}/>
+                <div className={curr_circle===1 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(1)}/>
+                <div className={curr_circle===2 ? "am_curr_circle" : "am_circle"} onClick={() => ChangeCard(2)}/>
             </div>
             <Navbar second_btn={1} third_btn={2} fourth_btn={3} />
             

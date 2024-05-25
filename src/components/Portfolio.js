@@ -12,7 +12,7 @@ function Portfolio() {
     const [proj_index, set_proj_index] = useState(0);
 
     function CurrExpanded(projectIndex) {
-        return expanded && projectIndex == proj_index;
+        return expanded && projectIndex === proj_index;
     }
 
     const ProjVariant = {
@@ -58,7 +58,7 @@ function Portfolio() {
                 const proj_ref = React.createRef();
 
                 function ExpandProj(projectIndex) {
-                    if(projectIndex == proj_index) {
+                    if(projectIndex === proj_index) {
                         set_expanded(!expanded);
                         proj_ref.current.scrollIntoView({
                             behavior: "smooth",
@@ -84,7 +84,7 @@ function Portfolio() {
                                 </Link>
                             </div> : ""
                             }
-                            <img loading="lazy" src={project.preview} className="preview"/>
+                            <img loading="lazy" src={project.preview} alt="" className="preview"/>
                         </div>
                     </motion.div>
                 )

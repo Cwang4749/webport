@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { motion, useAnimate } from "framer-motion";
 import "./styles/Flashcard.css";
 
@@ -7,7 +7,7 @@ function Flashcard(props) {
     
     const FlipFlashcard = () => {
         setTimeout(() => {
-            if(props.imageIndex + 1 == props.flashCardImage.length)
+            if(props.imageIndex + 1 === props.flashCardImage.length)
             {
                 props.setImageIndex(-1);
             }
@@ -28,13 +28,13 @@ function Flashcard(props) {
             className="flashcard" onClick={FlipFlashcard}
         >
             <div className="flashcardtext">
-            {props.imageIndex == -1 && 
+            {props.imageIndex === -1 && 
                 <div>{props.flashCardText.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</div>
             }
-            {props.imageIndex != -1 && !props.imageType[props.imageIndex] &&
+            {props.imageIndex !== -1 && !props.imageType[props.imageIndex] &&
                 <img loading="lazy" className="flashcardimg" src={props.flashCardImage[props.imageIndex]} alt="loading..." />
             }
-            {props.imageIndex != -1 && props.imageType[props.imageIndex] &&
+            {props.imageIndex !== -1 && props.imageType[props.imageIndex] &&
                 <video loading="lazy" src={props.flashCardImage[props.imageIndex]} className="flashcardimg" autoPlay loop muted/>
             }
             </div>

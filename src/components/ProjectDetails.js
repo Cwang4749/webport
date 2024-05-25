@@ -27,7 +27,7 @@ function ProjectDetails() {
         var stay = false;
         for(let i = 0; i < PortData.length; i++)
         {
-            if(buffer.toUpperCase() == PortData[i].projectName.toUpperCase())
+            if(buffer.toUpperCase() === PortData[i].projectName.toUpperCase())
             {
                 set_proj_name(PortData[i].projectName);
                 set_proj_text(PortData[i].text);
@@ -44,7 +44,7 @@ function ProjectDetails() {
         {
             navigate("/Portfolio");
         }
-    }, []);
+    }, [location.pathname, navigate]);
 
     const ProjSecVariant = {
         initial: {
