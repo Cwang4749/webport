@@ -1,13 +1,51 @@
-/* Create the asterisk, the animation, and its interaction*/
-.asterisk {
-    width: 25vh;
-    height: 25vh;
+.panobox {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -2;
+    background-image: linear-gradient(to bottom, #5E9FE0, #9CD4EE);
+}
+
+.pano1 {
+    height: 100%;
+    width: 200%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    cursor: grab;
+    z-index: -1;
+}
+
+.hello {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    text-align: left;
+    font-family: "Monaco", "Arial";
+    font-size: 1.5rem;
+    line-height: 170%;
+    color: #ae1b1b;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 5px;
+}
+
+/* Create the asterisk; the animation; and its interaction*/
+.asterisk {
+    height: 25vh;
+    aspect-ratio: 1;
+    position: fixed;
     top: 37.5vh;
     left: calc(50vw - 12.5vh);
     transition: 0.2s;
     animation: spin 6s infinite linear;
     animation-play-state: paused;
+    opacity: 1;
 }
 
 .asterisk:hover {
@@ -16,7 +54,6 @@
 }
 
 .asterisk:active {
-    width: 20vh;
     height: 20vh;
     top: 40vh;
     left: calc(50vw - 10vh);
@@ -38,11 +75,13 @@
 .bubble {
     height: 25vh;
     width: 25vh;
-    background-color: #bae8e8a3;
+    background-color: #bae8e8e8;
     color: black;
     border-radius: 50%;
     display: block;
     transition: .75s;
+    opacity: 1;
+    position: fixed;
 }
 
 .bubble:hover {
@@ -53,25 +92,21 @@
 
 /* Positions of the bubbles: */
 #aboutme {
-    position: absolute;
     top: 9.375vh;
     left: calc(50vw - 12.5vh);
 }
 
 #portfolio {
-    position: absolute;
     top: 37.5vh;
     left: calc(50vw + 15.625vh);
 }
 
 #contact {
-    position: absolute;
-    bottom: 9.375vh;
+    top: 65.625vh;
     left: calc(50vw - 12.5vh);
 }
 
 #experience {
-    position: absolute;
     top: 37.5vh;
     left: calc(50vw - 40.625vh);
 }

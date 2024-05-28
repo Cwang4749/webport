@@ -1,3 +1,24 @@
+.experiencepage {
+    display: block;
+    position: fixed;
+    background-color: rgb(25, 24, 24);
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    overflow-x: hidden;
+}
+.experiencepage::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: .4;
+    background: url("../../images/home/stars.gif");
+    z-index: -1;
+}
+
 .tableheader {
     position: relative;
     display: block;
@@ -9,6 +30,11 @@
     color: #4682B4;
     top: 3vh;
     font-family: "Monaco", "Arial";
+    z-index: 1;
+    mix-blend-mode: difference;
+    text-decoration: underline;
+    font-style: italic;
+    text-underline-offset: 7px;
 }
 
 /* Size and center the table */
@@ -28,7 +54,8 @@
 /*All cells have same background color and border. When hovered, change bg color*/
 .table1 td {
     border-left: solid 1px white;
-    background-color: rgba(232, 232, 232, 0.56);
+    /* background-color: rgba(232, 232, 232, 0.56); */
+    background-color: rgba(232, 232, 232, .75);
     border-radius: 10px;
     margin-bottom: 10vh;
     font-family: "Monaco", "Arial";
@@ -37,7 +64,8 @@
 }
 
 .table1 td:hover {
-    background-color: rgba(237, 210, 143, 0.56);
+    /* background-color: rgba(237, 210, 143, 0.56); */
+    background-color: rgba(237, 210, 143, 0.9);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -60,4 +88,41 @@
     min-width: 714px;
     text-align: left;
     text-indent: 7%;
+}
+
+.skilltable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95vw; 
+    min-width: 1000px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 45px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.skillbox {
+    height: 70px;
+    width: max-content;
+    display: flex;
+    margin-right: 50px;
+    margin-bottom: 25px;
+}
+
+.skill {
+    background: linear-gradient(to left, #f3f2ecb9, #ffefba);
+    color: #0f548c;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px 3px 3px 15px;
+    position: relative;
+    top: 10px;
+}
+.skill:hover {
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    cursor: pointer;
 }

@@ -1,10 +1,12 @@
 .aboutmepage {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(166, 164, 147);
+    /* background-color: rgb(166, 164, 147); */
+    background-image: linear-gradient(to bottom left, #9c522d, #e8eab2);
     display: flex;
     align-items: center;
-    justify-content: center;
+    user-select: none;
+    overflow: scroll;
 }
 
 .profilepic {
@@ -12,8 +14,7 @@
     min-width: 150px;
     aspect-ratio: 3/4;
     border-radius: 30px;
-    position: fixed;
-    left: 10%;
+    margin-left: 7%;
     object-fit: cover;
     box-shadow: 0 0 30px 5px rgba(30, 48, 107, 0.3);
 }
@@ -24,9 +25,10 @@
 
 .am_circlecontainer {
     width: 3%;
+    min-width: 22px;
     aspect-ratio: 1/5;
-    position: fixed;
-    left: 82%;
+    margin-left: 2%;
+    margin-right: 2%;
     display: flex;
     align-items: center;
     justify-content: center;

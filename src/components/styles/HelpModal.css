@@ -1,0 +1,95 @@
+.helpbutton {
+    width: 55px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: rgba(240, 230, 195, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.escapebutton {
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.helpmodal {
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: "Monaco", "Arial";
+    font-style: italic;
+    overscroll-behavior: contain;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+}
+
+.helpnav {
+    width: 25%;
+    min-width: 250px;
+    height: fit-content;
+    padding-top: 10px;
+}
+/* Each section in the navbar*/
+.helpnavsection {
+    height: 12vh;
+    width: 100%;
+    min-height: 70px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+    margin-bottom: 10px;
+}
+.helpnavsection:hover {
+    background-color: #aeb5c6;
+    color: #830000;
+    cursor: pointer;
+    transition: .15s;
+}
+/* Active section is highlighted */
+#currnavsection {
+    background-color: #487ea2;
+    color: #29015f;
+    transition: 0.35s;
+}
+
+.helpfeatures {
+    border-left: 1px solid white;
+    width: 75%;
+    min-width: 500px;
+    min-height: 99vh;
+    height: fit-content;
+    padding-top: 10px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.feature {
+    width: 40%;
+    min-width: 300px;
+    margin: 15px;
+    line-height: 150%;
+    background-color: #cfd24f;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+    color: #1b3b75;
+    font-size: 1.2rem;
+}
