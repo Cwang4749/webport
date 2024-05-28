@@ -1,5 +1,6 @@
-import React, {useState, useEffect, useCallback} from "react";
+import React, { useState } from "react";
 import { motion, useAnimate } from "framer-motion";
+import { useKeyPress } from "./useKeyPress";
 import sprite from "../images/aboutme/sprite.webp";
 import heart from "../images/aboutme/heart.png";
 import pig from "../images/aboutme/pig.webp";
@@ -43,61 +44,47 @@ function Sprite() {
         "outline": "none"
     }
 
-    const moveSprite = useCallback(e =>  {
-        switch (e.key) {
-            case 'ArrowLeft':
-                if(left_pos > 0) {
-                    set_left_pos(left_pos => (left_pos -= 2));
-                }
-                set_rotate_pos(rotate_pos => (rotate_pos -= 15));
-                break;
-            case 'ArrowRight':
-                if(left_pos < 92) {
-                    set_left_pos(left_pos => (left_pos += 2));
-                }
-                set_rotate_pos(rotate_pos => (rotate_pos += 15));
-                break;
-            case 'ArrowUp':
-                if(top_pos > 0) {
-                    set_top_pos(top_pos => (top_pos -= 2));
-                }
-                set_rotate_pos(rotate_pos => (rotate_pos -= 15));
-                break;
-            case 'ArrowDown':
-                if(top_pos < 86) {
-                    set_top_pos(top_pos => (top_pos += 2));
-                }
-                set_rotate_pos(rotate_pos => (rotate_pos += 15));
-                break;
-            default:
-                break;
+    const moveLeft = () => {
+        if(left_pos > 0) {
+            set_left_pos(left_pos => (left_pos -= 2));
         }
-        if(e.key !== 'r')
-        {
-            animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
+        set_rotate_pos(rotate_pos => (rotate_pos -= 15));
+        animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
+    };
+    const moveRight = () => {
+        if(left_pos < 92) {
+            set_left_pos(left_pos => (left_pos += 2));
         }
-    }, [top_pos, left_pos, rotate_pos, animatesprite, spriteref]);
-
-    const resetSprite = useCallback(e => {
-        if(e.key === 'r') {
-            set_left_pos(0);
-            set_top_pos(0);
-            set_rotate_pos(0);
-            setTimeout(() => {
-                animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: 1}]]);
-            }, 10);
+        set_rotate_pos(rotate_pos => (rotate_pos += 15));
+        animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
+    };
+    const moveUp = () => {
+        if(top_pos > 0) {
+            set_top_pos(top_pos => (top_pos -= 2));
         }
-    }, [top_pos, left_pos, rotate_pos, animatesprite, spriteref]);
-
-    useEffect(() => {
-        document.addEventListener('keydown', moveSprite);
-        document.addEventListener('keyup', resetSprite);
-    
-        return function () {
-            document.removeEventListener('keydown', moveSprite);
-            document.removeEventListener('keyup', resetSprite);
-        };
-    }, [top_pos, left_pos, rotate_pos, spriteref, animatesprite, moveSprite, resetSprite]);
+        set_rotate_pos(rotate_pos => (rotate_pos -= 15));
+        animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
+    };
+    const moveDown = () => {
+        if(top_pos < 86) {
+            set_top_pos(top_pos => (top_pos += 2));
+        }
+        set_rotate_pos(rotate_pos => (rotate_pos += 15));
+        animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: .1}]]);
+    };
+    const resetSprite = () => {
+        set_left_pos(0);
+        set_top_pos(0);
+        set_rotate_pos(0);
+        setTimeout(() => {
+            animatesprite([[spriteref.current, {x: left_pos + "vw", y: top_pos + "vh", rotate: rotate_pos}, {duration: 1}]]);
+        }, 10);
+    };
+    useKeyPress(moveUp, 'ArrowUp');
+    useKeyPress(moveDown, 'ArrowDown');
+    useKeyPress(moveLeft, 'ArrowLeft');
+    useKeyPress(moveRight, 'ArrowRight');
+    useKeyPress(resetSprite, 'r');
 
     return(
         <motion.img 
