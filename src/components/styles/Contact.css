@@ -4,8 +4,6 @@
     left: 0;
     top: 0;
     width: 100vw;
-    min-width: 1000px;
-    min-height: 500px;
     height: 100vh;
 
     display: flex;
@@ -15,13 +13,12 @@
     background-image: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
 }
 
-/* Basica styling of the business card, responsive width + height to a degree*/
+/* Basic styling of the business card, responsive width + height to a degree*/
 .card {
     display: block;
     position: absolute;
     background-color: rgba(255, 255, 255, 0);
     width: 90vw;
-    min-width: 1000px;
     aspect-ratio: 15/8;
     overflow: hidden;
 }
@@ -53,7 +50,6 @@
     font-family: "Monaco", "Arial";
     font-style: italic;
     font-weight: 600;
-    font-size: clamp(1rem, calc(0.8vw + 1vh), 2.5rem);
     text-wrap: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -118,4 +114,66 @@ a {
 
 #cardprofile:hover {
     box-shadow: 0 0 30px 5px rgba(66, 197, 156, 0.3);
+}
+
+@media (min-aspect-ratio: 2 / 1) {
+    .card {
+        width: 80vw;
+    }
+}
+@media (min-aspect-ratio: 235 / 100) {
+    .card {
+        width: 70vw;
+    }
+}
+@media (max-width: 1300px) {
+    .cardlink { font-size: 15px; }
+}
+@media (max-width: 1000px) {
+    .cardlink { font-size: 13px; }
+}
+@media (max-width: 850px) {
+    .cardlink { font-size: 11px; }
+}
+@media (max-width: 750px) {
+    .cardlink { font-size: 9px; }
+}
+@media (max-width: 600px) {
+    .contactpage {
+        align-items: safe start;
+        width: 100vw;
+    }
+    #contactcardbg {
+        height: 50%;
+    }
+    .card {
+        width: 100vw;
+        height: 100vh;
+        overflow-y: visible; overflow-x: hidden;
+    }
+    #cardprofile {
+        top: 5%;
+    }
+    .cardlink {
+        width: 90%;
+        height: 5%;
+        background-color: #d18669;
+        color: #334f42;
+    }
+    #linkedinpos {
+        left: 5%;
+        top: 55%;
+    }
+    #githubpos {
+        left: 5%;
+        top: 65%;
+    }
+    #gmailpos {
+        left: 5%;
+        top: 75%;
+    }
+    #outlookpos {
+        left: 5%;
+        top: 85%;
+    }
 }
