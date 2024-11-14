@@ -7,7 +7,7 @@ function FAB(props) {
     const [fab_expand, set_fab_expand] = useState(false);
     const styles = {
         expanded: {
-            width: "300px",
+            // width: "300px",
             borderRadius: "20px",
             transition: ".4s"
         },
