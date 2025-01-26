@@ -1,9 +1,8 @@
 .flashcard {
     width: 50%;
-    min-width: 500px;
+    /* min-width: 450px; */
     aspect-ratio: 3/2;
     border-radius: 30px;
-    background-color: rgb(193, 207, 218);
 
     margin-left: 7%;
     cursor: pointer;
@@ -19,6 +18,15 @@
 .flashcard:hover {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
+#card0 {
+    background-color: rgb(193, 207, 218);
+}
+#card1 {
+    background-color: rgb(218, 214, 176);
+}
+#card2 {
+    background-color: rgb(218, 175, 175);
+}
 
 .flashcardtext {
     display: flex;
@@ -32,7 +40,7 @@
     text-indent: 7%;
 
     font-family: "Monaco", "Arial";
-    font-size: clamp(15px, 2.4vh, 100px);
+    font-size: clamp(8px, 2.4vh, 100px);
     font-style: italic;
     transition: 0.05s;
 }
@@ -45,4 +53,29 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@media (max-aspect-ratio: 1 / 1) {
+    .flashcard {
+        width: 75%;
+    }
+}
+@media (max-aspect-ratio: 1.15 / 1) and (min-aspect-ratio: 1 / 1) {
+    .flashcardtext {
+        font-size: clamp(8px, 2vw, 100px);;
+    }
+}
+@media (min-aspect-ratio: 1.5 / 1) {
+    .flashcardtext {
+        font-size: clamp(8px, 2vw, 100px);;
+    }
+}
+@media (max-aspect-ratio: 0.65 / 1) {
+    .flashcard {
+        aspect-ratio: 3/4;
+        width: 75%;
+    }
+    .flashcardtext {
+        font-size: clamp(8px, 4vw, 100px);;
+    }
 }
