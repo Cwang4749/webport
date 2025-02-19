@@ -74,7 +74,7 @@ function Portfolio() {
 
                 return(
                     <motion.div key={index} variants={ProjVariant} initial="initial" whileInView="animate" viewport={{once: true}}>
-                        <div key={index} ref={proj_ref} className="projects" onClick={() => ExpandProj(index)} style={CurrExpanded(index) ? { 'aspectRatio': '3' } : { 'aspectRatio': '7'}}>
+                        <div key={index} ref={proj_ref} className={CurrExpanded(index) ? "projects_expanded" : "projects"} onClick={() => ExpandProj(index)}>
                             <p id={CurrExpanded(index) ? "projectname_expanded" : "projectname"}>{project.projectName}</p>
                             {CurrExpanded(index) ? 
                             <div className="expandedcontainer">

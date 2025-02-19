@@ -28,7 +28,7 @@
     font-family: "Monaco", "Arial";
     font-size: 1.5rem;
     line-height: 170%;
-    color: #ae1b1b;
+    color: #104744;
     font-style: italic;
     text-decoration: underline;
     text-decoration-style: dotted;
@@ -100,7 +100,7 @@
     width: 200px;
     height: 200px;
     background-color: #bae8e8e8;
-    color: black;
+    color: rgb(0, 0, 0);
     border-radius: 50%;
     display: grid;
     transition: .75s;

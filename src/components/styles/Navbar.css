@@ -9,6 +9,10 @@
     border-radius: 15px 0px 0px 15px ;
     opacity: 0.6;
     z-index: 1;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px 5px 0px;
 }
 .Navbar:hover {
     opacity: 1;
@@ -17,11 +21,11 @@
 /* Style all the buttons */
 .button {
     width: 50%;
-    position: relative;
+    /* position: relative;
     display: block;
     top: 10%;
     padding-bottom: 15%;
-    left: 25%;
+    left: 25%; */
 }
 
 /* When a button is hovered, expand and reposition*/
