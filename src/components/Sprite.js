@@ -36,8 +36,8 @@ function Sprite() {
     const sprite_style = {
         "width": "8vw",
         "position": "fixed",
-        "bottom": "0", 
-        "right": "0",
+        "top": "0", 
+        "left": "0",
         "zIndex": "1",
         "aspectRatio": "1",
         "cursor": "pointer",

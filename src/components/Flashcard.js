@@ -32,9 +32,9 @@ function Flashcard(props) {
                 <div>{props.flashCardText.map((str,index) => {return(<p key={index}>{str} <br/></p> )})}</div>
             }
             {props.imageIndex !== -1 && !props.imageType[props.imageIndex] &&
-                <img loading="lazy" className="flashcardimg" src={props.flashCardImage[props.imageIndex]} alt="loading..." />
+                <img loading="lazy" className="flashcardimg" src={props.flashCardImage[props.imageIndex]} alt=""/>
             }
-            {props.imageIndex !== -1 && props.imageType[props.imageIndex] &&
+            {!!props.imageIndex !== -1 && !!props.imageType[props.imageIndex] &&
                 <video loading="lazy" src={props.flashCardImage[props.imageIndex]} className="flashcardimg" autoPlay loop muted/>
             }
             </div>
