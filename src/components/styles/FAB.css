@@ -4,7 +4,6 @@
     position: fixed;
     bottom: 10px;
     left: 10px;
-    /* background-color: rgb(210, 134, 75); */
     opacity: .9;
     border-radius: 50%;
     display: flex;
@@ -43,6 +42,9 @@
     inset: 5px 5px 5px 5px;
     background: rgb(235, 159, 101);
 }
+#fabexpand {
+    width: 300px;
+}
 #fabexpand::after {
     content: '';
     border-radius: 20px;
@@ -78,4 +80,37 @@
 }
 .fablinks:hover {
     color: rgb(255, 243, 243);
+}
+
+@media (max-width: 1000px) {
+    .fabcontainer {
+        transform: scale(0.8);
+    }
+    .fabcontainer:hover {
+        transform: scale(0.8);
+    }
+    #fabexpand {
+        width: 240px;
+    }
+    .fablinks {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 450px) {
+    .fabcontainer {
+        bottom: -5px;
+        left: -5px;
+        transform: scale(0.65);
+    }
+    .fabcontainer:hover {
+        transform: scale(0.65);
+        bottom: 0px;
+        left: 0px;
+    }
+    #fabexpand {
+        width: 195px;
+    }
+    .fablinks {
+        font-size: 1.5rem;
+    }
 }

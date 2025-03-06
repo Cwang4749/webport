@@ -60,6 +60,7 @@ function AboutMe() {
                 imageIndex={flashcard_image_index}
                 setImageIndex={set_flashcard_image_index}
                 imageType={FlashcardData[curr_circle].imageType}
+                bg_color={curr_circle}
             />
 
             <div ref={scope} className="am_circlecontainer">

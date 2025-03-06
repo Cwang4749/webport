@@ -11,7 +11,7 @@ function PageError() {
             exit={{opacity: 0.5}} transition={{duration: 0.3, ease: "linear"}}
         >
             <div className="errortext">
-                <div style={{fontSize: "2.3rem"}}>
+                <div id="errorHeading">
                     PAGE NOT FOUND!
                     <br/>
                     <br/>

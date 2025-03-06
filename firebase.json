@@ -9,6 +9,13 @@
     "rewrites": [{
       "source": "**",
       "destination": "/index.html"
+    }],
+    "headers": [{
+      "source": "**/*.@(jpg|jpeg|gif|png|webp|mp4",
+      "headers": [{
+        "key": "Cachee-Control",
+        "value": "max-age=7200"
+      }]
     }]
   }
 }

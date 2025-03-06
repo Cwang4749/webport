@@ -12,7 +12,7 @@ const FlashcardData = [
         imageType: [0]
     },
     {
-        description: ["I enjoy spending time with my family, especially taking them to parks and walking the trails. Although I enjoy most sports, the one I play the most is basketball. At home, I play games, watch movies/tv shows, and I also like to read light novels."],
+        description: ["I enjoy spending time with my family, especially taking them to parks and walking the trails. Although I enjoy most sports, the one I play the most is basketball. At home, I play games, watch movies/tv shows, and read."],
         image: [scenery1, scenery2, scenery3],
         imageType: [1, 0, 1]
     },

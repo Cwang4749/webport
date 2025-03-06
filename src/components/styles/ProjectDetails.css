@@ -1,7 +1,5 @@
 .projdetails {
     width: 95vw;
-    min-width: 1000px;
-    /* background-color: #408EC6; */
     background-color: #1E2761;
     position: absolute;
     left: 2.5vw;
@@ -40,7 +38,6 @@
 
 .projectsection {
     background-color: #408EC6;
-    /* background-color: #1E2761; */
     width: 90%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -48,7 +45,6 @@
     padding: 40px;
 }
 .projectsection:hover {
-    /* box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.518); */
     box-shadow: 0 0 15px 3px rgba(76, 85, 94, 0.485);
 }
 
@@ -68,4 +64,65 @@
 }
 .projectimages:hover {
     box-shadow: 0 0 30px 10px rgba(171, 121, 102, 0.79);
+}
+
+@media (max-width: 1200px) {
+    .projectheader {
+        font-size: 1.75rem;
+    }
+    .projecttext {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 1000px) {
+    .projectheader {
+        font-size: 1.5rem;
+        padding: 45px;
+    }
+    .projectsection {
+        padding: 30px;
+    }
+    .projecttext {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 700px) {
+    .projdetails {
+        border-radius: 15px;
+    }
+    .projectheader {
+        font-size: 1.25rem;
+        border-radius: 10px;
+        padding: 35px;
+    }
+    .projectsection {
+        border-radius: 30px;
+        padding: 20px;
+    }
+    .projecttext {
+        font-size: 0.8rem;
+    }
+    .projectimages {
+        border-radius: 10px;
+    }
+    .progressbar {
+        width: 10px;
+    }
+}
+@media (max-width: 450px) {
+    .projectheader {
+        font-size: 1rem;
+        padding: 20px;
+    }
+    .projectsection {
+        border-radius: 20px;
+        padding: 15px;
+    }
+    .projecttext {
+        font-size: 0.65rem;
+        line-height: 150%;
+    }
+    .progressbar {
+        width: 7px;
+    }
 }

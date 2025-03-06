@@ -69,7 +69,7 @@ function HelpModal() {
         <div>
             
             <motion.div className="helpbutton" ref={scope} onHoverStart={() => HoverHelp()} onClick={() => set_help_modal(true)}>
-                <img loading="lazy" src={questionmark} alt="" style={{"height": "80%"}} />
+                <img src={questionmark} style={{"height": "80%"}} alt=" "/>
             </motion.div>
  
             <AnimatePresence mode="wait" initial={false}>

@@ -41,7 +41,7 @@
 
 .helpnav {
     width: 25%;
-    min-width: 250px;
+    /* min-width: 250px; */
     height: fit-content;
     padding-top: 10px;
 }
@@ -55,6 +55,10 @@
     align-items: safe center;
     justify-content: safe center;
     margin-bottom: 10px;
+    padding: 0px 3px 0px 3px;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 .helpnavsection:hover {
     background-color: #aeb5c6;
@@ -70,10 +74,10 @@
 }
 
 .helpfeatures {
-    border-left: 1px solid white;
+    /* border-left: 1px solid white; */
     width: 75%;
-    min-width: 500px;
-    min-height: 99vh;
+    /* min-width: 500px; */
+    /* min-height: 99vh; */
     height: fit-content;
     padding-top: 10px;
     overflow: scroll;
@@ -83,7 +87,7 @@
 }
 .feature {
     width: 40%;
-    min-width: 300px;
+    /* min-width: 300px; */
     margin: 15px;
     line-height: 150%;
     background-color: #cfd24f;
@@ -92,4 +96,72 @@
     border-radius: 10px;
     color: #1b3b75;
     font-size: 1.2rem;
+}
+@media (max-width: 2000px) {
+}
+@media (max-width: 1700px) {
+}
+@media (max-width: 1250px) {
+}
+@media (max-width: 1000px) {
+    .escapebutton {
+        width: 40px;
+        right: 8px;
+        top: 8px;
+    }
+    .helpnavsection {
+        font-size: 1.1rem;
+    }
+    .feature {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 770px) {
+    .escapebutton {
+        width: 35px;
+        right: 7px;
+        top: 7px;
+    }
+    .helpnavsection {
+        font-size: 1rem;
+    }
+    .feature {
+        font-size: 0.9rem;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 7.5px;
+    }
+}
+@media (max-width: 550px) {
+    .escapebutton {
+        width: 30px;
+        right: 5px;
+        top: 5px;
+    }
+    .feature {
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 450px) {
+    .helpnavsection {
+        font-size: 0.9rem;
+    }
+    .feature {
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 350px) {
+    .escapebutton {
+        width: 25px;
+        right: 3px;
+        top: 3px;
+    }
+    .helpnavsection {
+        font-size: 0.8rem;
+    }
+    .feature {
+        font-size: 0.7rem;
+    }
 }

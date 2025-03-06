@@ -18,7 +18,7 @@ const education = [
     {
         year: "2019 - 2022",
         place: "Hunter College",
-        description: ["BA in Computer Science, Minor in Mathematics, Summa Cum Laude. Worked with C++, Python, React Framework, Flutter Framework, mySQL Database, etc. Familiar with app and web development."]
+        description: ["BA in Computer Science, Minor in Mathematics, Summa Cum Laude. Worked with C++, Python, React, Flutter Framework, mySQL Database, etc. Familiar with app and web development."]
     },
     {
         year: "Spring 2021 - Fall 2021",
